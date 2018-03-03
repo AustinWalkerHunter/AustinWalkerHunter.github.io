@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+</head>
+    <title>Austin W Hunter</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <h1>Brief Overview</h1>
+      <div>
+          <p>This is a paragraph</p>
+          <a href="https://www.linkedin.com/in/austin-hunter-182105b3/"> This is a
+          link for my linkedin profile.</a>
+      </div>
+      <div>
+          <img src="MyProfile.jpg" alt="This is a picture of me, don't worry I've had a haircut since this was taken!">
+      </div>
+<footer>
+  <p>In the making by Austin Hunter</p>
+</footer>
+
+<body>
+</html>
