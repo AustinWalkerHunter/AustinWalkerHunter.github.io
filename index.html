@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 </head>
     <title style="background-color:LightGray;">Austin Hunter</title>
-      <meta name="viewport" content="width=device-width">
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <style>
       body {
           font: 20px "courier";
@@ -17,27 +17,52 @@
            background-color: #SlateBlue;
            color: #ff6347;
            }
+  .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+          }
+    .bg-1 {
+           background-color: #3182bd; /* Green */
+           color: #ffffff;
+          }
+    footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+          }
       </style>
 </head>
-<body style="background-color:powderblue;">
-  <div class="Container text-center">
-    <h1>Austin Hunter</h1>
-    <div>
-          <a href="https://www.linkedin.com/in/austin-hunter-182105b3/"> Vist my linkedin profile here</a>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="nvabar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#index.html">Portfolio</a>
       </div>
-      <div>
-        <img src="MyProfile.jpg" class="img-responsive img-square" style="display:inline" width="350" height="350" alt="This is a picture of me, don't worry I've had a haircut since this was taken!" >
-      </div>
-      <h2> <br> Here's my current resume!</h2>
-      <div>
-            <img src="Resume-1.jpg" class="img-responsive" style="display:inline" width="495" height="625">
-      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="Resume-1.html">Resume</a></li>
+          <li><a href="https://github.com/AustinWalkerHunter"></a></li>
+        </ul>
     </div>
+  </div>
+</nav>
+  <div class="bg-1">
+    <div class="Container text-center">
+      <h1>Austin Hunter</h1>
+        <img src="MyProfile.jpg" class="img-responsive img-circle" style="display:inline" width="350" height="350">
+    </div>
+</body>
 <footer>
   <div class="text-center">
-    <p> In the making by Austin Hunter</p>
+    <p> Made from scratch by Austin Hunter</p>
   </div>
 </footer>
 
-<body>
+
 </html>
