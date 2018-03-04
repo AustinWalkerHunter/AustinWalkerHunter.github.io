@@ -12,21 +12,38 @@
           font: 20px "courier";
           color: #A9A9A9;
            }
+
   .navbar {
             margin-bottom: 0;
             border-radius: 0;
+            font-size: 20px;
+            letter-spacing: 5px;
           }
     .bg-1 {
+           margin: 0;
            background-color: #3182bd;
            color: #ffffff;
           }
     .bg-2 {
-           background-color: #3182bd;
+           margin: 0;
+           background-color: #696969;
            color: #ffffff;
           }
+    .bg-3 {
+           margin: 0;
+           background-color:  #333333;
+           color: #ffffff;
+          }
+      .bg-4 {
+           margin: 0;
+           background-color: #696969;
+           color: #ffffff;
+          }
+
     footer {
-            background-color: #f2f2f2;
+            background-color: #3182bd;
             padding: 25px;
+            color: #ffffff;
           }
       </style>
 </head>
@@ -55,48 +72,50 @@
   </div>
 </nav>
   <div class="bg-1">
-    <div class="Container text-center">
+    <div class="container-fluid text-center">
       <h1>Austin Hunter</h1>
         <img src="MyProfile.jpg" class="img-responsive img-circle" style="display:inline" width="350" height="350">
           <p> Welcome to my Personal Portfolio! <br><br></p>
     </div>
   </div>
-  <div class="bg-2">
-    <div class="Container text-center">
-      <h1>About Me<br></h1>
-    </div>
-  </div>
 
-    <div class="container bg-2 text-center">
-      <p> I am currently a student at Boise State University pursuing a degree in Computer
+    <div class="container-fluid bg-2 text-center" margin: 0;>
+      <div class="container-fluid text-center">
+        <h2 style="font-size:150%;">About Me<br></h2>
+      </div>
+      <p> My name is Austin Hunter. I am currently a student at Boise State University pursuing a degree in Computer
           Science! Since a young age I have enjoyed taking things apart to understanding how it works
           which has lead me to my interest in computer programming. My dream is to find a job with a company
-          that matches my culture and passion for technology.
-      <h2> 3 Things I enjoy </h2>
+          that best matches my culture and passion for technology. <br> <br> </p>
+      </div>
+
+    <div class="container-fluid bg-3 text-center" margin: 0;>
+      <h3 style="font-size:150%;"> 3 Things I enjoy </h3>
       <div class="row">
       <div class="col-sm-4">
         <p>Rock Climbing</p>
-        <img src="Rock.jpg" class="img-responsive" style=width="350" height="750">
+        <img src="Rock.jpg"  style="width:400px;height:500px;">
         <p>Black Cliffs, ID</p>
       </div>
       <div class="col-sm-4">
         <p>Quiet Games of Chess</p>
-        <img src="Chess.gif" class="img-responsive" style=width="350" height="750">
+        <img src="Chess.gif"  style="width:400px;height:500px;">
           <p>King's Gambit</p>
       </div>
       <div class="col-sm-4">
         <p>Exploring the Mountains of Idaho</p>
-        <img src="Mountain.JPG" class="img-responsive" style="display:inline" width="350" height="350">
+        <img src="Mountain.JPG" style="width:400px;height:500px;">
           <p>Jump Creek Falls, ID</p>
           </div>
         </div>
+        <p> <br> </p>
     </div>
 
 
 </body>
 <footer>
   <div class="text-center">
-    <p> Made from scratch by Austin Hunter</p>
+    <p> <br><br> Made from scratch by Austin Hunter <br><br></p>
   </div>
 </footer>
 
