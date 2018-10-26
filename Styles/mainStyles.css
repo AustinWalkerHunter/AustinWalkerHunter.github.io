@@ -1,0 +1,37 @@
+body {
+    font: 20px "courier";
+    color: #A9A9A9;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+.bg-1 {
+    margin: 0;
+    background-color: #3182bd;
+    color: #ffffff;
+}
+.bg-2 {
+    margin: 0;
+    background-color: #696969;
+    color: #ffffff;
+}
+.bg-3 {
+    margin: 0;
+    background-color:  #333333;
+    color: #ffffff;
+}
+.bg-4 {
+    margin: 0;
+    background-color: #696969;
+    color: #ffffff;
+}
+
+footer {
+    background-color: #3182bd;
+    padding: 25px;
+    color: #ffffff;
+}
