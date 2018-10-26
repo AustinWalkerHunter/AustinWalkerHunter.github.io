@@ -1,8 +1,3 @@
-body {
-    font: 20px "courier";
-    color: #A9A9A9;
-}
-
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
@@ -29,9 +24,17 @@ body {
     background-color: #696969;
     color: #ffffff;
 }
-
+body {
+    font: 20px "courier";
+    color: #A9A9A9;
+    background-color:#3182bd;
+}
 footer {
     background-color: #3182bd;
     padding: 25px;
     color: #ffffff;
+}
+title{
+    background-color:LightGray;
+    font-size: 15px;
 }
