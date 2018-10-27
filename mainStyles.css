@@ -24,6 +24,11 @@
     background-color: #696969;
     color: #ffffff;
 }
+
+.pic{
+    width:400px;
+    height:500px;
+}
 body {
     font: 20px "courier";
     color: #A9A9A9;
