@@ -43,3 +43,19 @@ title{
     background-color:LightGray;
     font-size: 15px;
 }
+
+.fam{
+
+    display: inline;
+    float: right;
+    margin-top: 1%;
+    padding: 0;
+    border-bottom: 0;
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+a{
+    color: #9d9d9d;
+}
