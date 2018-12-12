@@ -26,17 +26,19 @@
 }
 
 .pic{
-    width:400px;
-    height:500px;
+    width: 224px;
+    height: 265px;
 }
+
+
 body {
     font: 20px "courier";
     color: #A9A9A9;
-    background-color:#3182bd;
+    background-color: #222222;
 }
 footer {
     background-color: #3182bd;
-    padding: 25px;
+    padding: 10px;
     color: #ffffff;
 }
 title{
