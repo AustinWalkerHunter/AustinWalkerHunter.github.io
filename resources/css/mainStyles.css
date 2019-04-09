@@ -29,7 +29,10 @@
     width: 224px;
     height: 265px;
 }
-
+.mini_board .cg-board-wrap {
+    width: 400px !important;
+    height: 400px !important;
+}
 
 body {
     font: 20px "courier";
