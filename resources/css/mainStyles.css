@@ -50,7 +50,6 @@ title{
 }
 
 .fam{
-
     display: inline;
     float: right;
     margin-top: 1%;
@@ -63,4 +62,11 @@ a:hover{
 }
 a{
     color: #9d9d9d;
+}
+.dropdown-menu{
+    background-color: #101010;
+}
+.dropdown-menu a{
+    font-size: 16px;
+    padding: 5px;
 }
