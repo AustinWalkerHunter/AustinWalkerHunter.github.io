@@ -49,6 +49,10 @@ title{
     font-size: 15px;
 }
 
+.name{
+    font-size: 45px;
+}
+
 .fam{
     display: inline;
     float: right;
