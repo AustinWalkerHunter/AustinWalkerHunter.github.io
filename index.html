@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Austin Hunter</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Austin Hunter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="shortcut icon" type="image/png" href="favicon-16x16.png"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139880987-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139880987-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        gtag('config', 'UA-139880987-1');
-    </script>
-
+      gtag('config', 'UA-139880987-1');
+  </script>
   <link rel="stylesheet" type="text/css" href="resources/css/common.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/mainStyles.css">
+  <link rel="stylesheet" type="text/css" href="resources/css/mainStyles.css">
 </head>
 <body>
   <nav class="navbar navbar-inverse">
@@ -56,9 +55,9 @@
   </nav>
   <div class="bg-1">
     <div class="container-fluid text-center">
-      <h1 class="name">Austin Hunter</h1>
+      <h1 class="name TBspace">Austin Hunter</h1>
         <img src="resources/Professional_Head_Shot.jpg" class="img-responsive img-circle" style="display:inline" width="350" height="350">
-          <p> Welcome to my Personal Portfolio! <br><br></p>
+          <p class="topSpace"> Welcome to my Personal Portfolio! <br><br></p>
     </div>
   </div>
   <div class="container-fluid bg-2 text-center">
@@ -66,36 +65,46 @@
       <h2 style="font-size:150%;">About Me<br></h2>
     </div>
     <p> My name is Austin Hunter. I'm a senior at Boise State University pursuing a degree in Computer
-      Science! Thanks for visiting my first website, have a swell day!<br> <br> </p>
+      Science! Thanks for visiting my website, have a swell day!<br> <br> </p>
   </div>
   <div class="container-fluid bg-3 text-center">
-    <h3 style="font-size:150%;"> 3 Things I Enjoy </h3>
     <div class="row">
-      <div class="col-sm-4">
-        <p>Rock Climbing</p>
-        <img src="resources/Rock.jpg" class="pic">
-        <p>Black Cliffs</p>
+      <div id="normalView">
+        <h3 class="enjoy bottom_space"><a id="contentWord" onclick="showHiddenContent()">3 Things I Enjoy</a></h3>
+        <div class="col-sm-4">
+          <p class="smallBotSpace">Rock Climbing</p>
+          <img src="resources/Rock.jpg" class="pic">
+          <p class="bottom_space">Black Cliffs, ID</p>
+        </div>
+        <div class="col-sm-4" id="chess">
+          <p class="smallBotSpace">Quick Games of Chess</p>
+          <iframe src="https://lichess.org/tv/frame?theme=brown&bg=light" style="width: 300px; height: 330px;" allowtransparency="true" frameborder="0"></iframe>
+          <p class="bottom_space">LIVE from <a href="https://lichess.org/tv">lichess.org</a></p>
+        </div>
+        <div class="col-sm-4">
+          <p class="smallBotSpace">Hammocking by the River</p>
+          <img src="resources/hammock.jpeg" class="picWider">
+            <p class="bottom_space">Boise River</p>
+        </div>
       </div>
-      <div class="col-sm-4">
-          <p>Quick Games of Chess</p>
-        <!--<img src="resources/Chess.gif" class="pic">-->
-            <script class="pic" src="https://lichess.org/tv/embed?w=400&h=400"></script>
-              <p>Live feed</p>
+      <div id="hiddenContent">
+        <h3 class="TBspace">You found hidden content!</h3>
+        <h4>SCORE : <span id="score">0</span></h4>
+        <h4>High Score = <span id="highScore">100</span></h4>
+        <canvas id="canvas" width="300" height="300"></canvas><br>
+        <div>
+          <button class="btn btn-warning TBspace" id="playGame" onclick="play()">Play!</button>
+          <button class="btn btn-warning TBspace" id="restartGame" onclick="restart()">Restart</button>
+          <button class="btn btn-primary TBspace" onclick="hideHiddenContent()">Quit</button>
+        </div>
       </div>
-      <div class="col-sm-4">
-        <p>Exploring</p>
-        <img src="resources/Mountain.JPG" class="pic">
-          <p>Idaho</p>
-      </div>
-    </div>
-    <p> <br> </p>
+   </div>
   </div>
+  <script src="snake.js"></script>
 </body>
-
 <footer>
   <div class="text-center">
-    <p> <br> Made from scratch by Austin Hunter <br></p>
+    <p class="TBspace">Made from scratch by Austin Hunter</p>
   </div>
 </footer>
-
 </html>

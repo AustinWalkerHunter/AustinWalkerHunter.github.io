@@ -26,12 +26,17 @@
 }
 
 .pic{
-    width: 224px;
-    height: 265px;
+    width: 300px;
+    height: 330px;
 }
-.mini_board .cg-board-wrap {
-    width: 400px !important;
-    height: 400px !important;
+
+.picWider{
+    width: 310px;
+    height: 330px;
+}
+
+.dropdown-menu{
+    padding-bottom: 0 !important;
 }
 
 body {
@@ -48,9 +53,22 @@ title{
     background-color:LightGray;
     font-size: 15px;
 }
-
+.enjoy{
+    font-size:150%;
+    text-decoration: underline;
+}
 .name{
     font-size: 45px;
+}
+
+.smallBotSpace{
+    margin-bottom: 5px;
+}
+.TBspace{
+    margin: 15px 0 15px 0;
+}
+.bottom_space{
+    margin-bottom: 30px;
 }
 
 .fam{
@@ -76,4 +94,22 @@ a{
 }
 .hr{
     margin-bottom: 0;
+    border-color: #222222;
+}
+
+.topSpace{
+    margin-top: 10px;
+}
+
+#contentWord{
+    font-style: italic;
+    color: white;
+}
+
+#hiddenContent{
+    display: none;
+}
+
+#restartGame{
+    display: none;
 }
