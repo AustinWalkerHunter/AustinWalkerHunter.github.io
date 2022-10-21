@@ -1,7 +1,11 @@
 {
-    "webcredentials": {
-        "apps": [
-            "ET5P2CXARP.com.austinhunter.summitStats"
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "ET5P2CXARP.com.austinhunter.summitStats",
+                "paths": [ "*" ]
+            }
         ]
     }
 }
