@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="background">
 <head>
   <title>Austin Hunter</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="shortcut icon" type="image/png" href="favicon-16x16.png"/>
+  <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -20,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="resources/css/common.css">
   <link rel="stylesheet" type="text/css" href="resources/css/mainStyles.css">
 </head>
-<body>
+<body class="main-container">
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -29,14 +29,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#index.html">Home</a>
+        <a class="navText navbar-brand" href="#index.html">Austin Hunter</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-left">
-          <li><a href="src/Resume01.html" target="_blank">Resume</a></li>
-          <li><a href="https://github.com/AustinWalkerHunter" target="_blank">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank">LinkedIn</a></li>
-          <li class="nav-item dropdown">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a class="navText" href="resources/AustinHunter_Resume.pdf" target="_blank">Resume</a>
+          </li>
+          <li><a class="navText" href="https://github.com/AustinWalkerHunter" target="_blank">GitHub</a></li>
+          <li><a class="navText" href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank">LinkedIn</a></li>
+          <li><a class="navText" href="https://apps.apple.com/ca/app/summit-stats/id1643467168?platform=iphone" target="_blank">SummitStats</a></li>
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Side Projects
             </a>
@@ -48,26 +51,26 @@
               <a href="https://austinwalkerhunter.github.io/JavaScript_Introduction/" target="_blank">JavaScript Intro</a>
               <hr class="hr">
             </div>
-          </li>
+          </li> -->
           </ul>
       </div>
     </div>
   </nav>
-  <div class="bg-1">
-    <div class="container-fluid text-center">
-      <h1 class="name TBspace">Austin Hunter</h1>
-        <img src="resources/Professional_Head_Shot.jpg" class="img-responsive img-circle" style="display:inline" width="350" height="350">
-          <p class="topSpace"> Welcome to my Personal Portfolio! <br><br></p>
-    </div>
-  </div>
-  <div class="container-fluid bg-2 text-center">
-    <div class="container-fluid text-center">
-      <h2 style="font-size:150%;">About Me<br></h2>
-    </div>
-    <p> My name is Austin Hunter. I'm a senior at Boise State University pursuing a degree in Computer
-      Science! Thanks for visiting my website, have a swell day!<br> <br> </p>
-  </div>
-  <div class="container-fluid bg-3 text-center">
+  <div class="container-fluid">
+  <div class="header row">
+        <div class="col-sm-7 header-content">
+          <h1 class="header-title TBspace">Hey, I’m Austin - A Software
+            Engineer from Boise.</h1>
+          <p class="aboutMe-content">I've developed features for thousands with Paylocity and designed & developed my own IOS app Summit Stats. I'm an outdoor enthusiest who's always on a search for a new challenge.</p>
+          <div class="aboutMe-email"><a  href = "mailto: ahunter916@gmail.com">ahunter916@gmail.com</a></div>
+        </div>
+        <div class="col-sm-5 profilePic-container">
+            <img src="resources/profilePic.jpg" class="img-responsive profilePic">
+         </div>
+   </div>
+   </div> 
+
+  <div class="container-fluid activites-container text-center">
     <div class="row">
       <div id="normalView">
         <h3 class="enjoy bottom_space"><a id="contentWord" onclick="showHiddenContent()">3 Things I Enjoy</a></h3>
@@ -79,12 +82,12 @@
         <div class="col-sm-4" id="chess">
           <p class="smallBotSpace">Quick Games of Chess</p>
           <iframe src="https://lichess.org/tv/frame?theme=brown&bg=light" style="width: 300px; height: 330px;" allowtransparency="true" frameborder="0"></iframe>
-          <p class="bottom_space">LIVE from <a href="https://lichess.org/tv">lichess.org</a></p>
+          <p class="bottom_space"><span class="live-text">LIVE</span> from <a href="https://lichess.org/tv">lichess.org</a></p>
         </div>
         <div class="col-sm-4">
-          <p class="smallBotSpace">Hammocking by the River</p>
-          <img src="resources/hammock.jpeg" class="picWider">
-            <p class="bottom_space">Boise River</p>
+          <p class="smallBotSpace">Skiing in the Mountains</p>
+          <img src="resources/skiing.png" class="picWider">
+            <p class="bottom_space">Snowbowl, AZ</p>
         </div>
       </div>
       <div id="hiddenContent">
@@ -102,9 +105,4 @@
   </div>
   <script src="snake.js"></script>
 </body>
-<footer>
-  <div class="text-center">
-    <p class="TBspace">Made from scratch by Austin Hunter</p>
-  </div>
-</footer>
 </html>

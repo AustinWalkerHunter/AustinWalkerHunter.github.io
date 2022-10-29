@@ -1,38 +1,96 @@
+.main-container {
+    font-family: 'Circular Std', sans-serif;             
+}
+
+.background {
+    background-color: #12211b;
+}
 .navbar {
+    background-color: #262626;
     margin-bottom: 0;
     border-radius: 0;
-    font-size: 20px;
+    font-size: 20pt;
     letter-spacing: 5px;
 }
-.bg-1 {
-    margin: 0;
-    background-color: #3182bd;
+
+.navText {
+    color: #e6e6e6 !important;
+    font-size: 15pt;
+}
+
+.header-content {
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+.header {
+    background-color: #1a2e26;
     color: #ffffff;
 }
-.bg-2 {
-    margin: 0;
-    background-color: #696969;
+
+.header-title {
+    font-size: 25pt;
+    max-width: 500px;
+    font-weight: 900;
+    font-family: 'CircularStd', sans-serif !important;
+}
+
+.aboutMe-content {
+    padding-top: 10px;
+    font-weight: 300;
+    max-width: 700px;
+}
+
+.aboutMe-email {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: rgb(223, 223, 223);
+    border-bottom: 1px solid white;
+    width: fit-content;
+}
+
+.profilePic {
+    border-radius: 25px;
+    display: inline; 
+    width: 275px;
+    height: 350px;
+}
+
+.profilePic-container {
+    text-align: center;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .profilePic-container {
+        display: none;
+    }
+}
+
+.activites-container {
+    background-color:  #12211a;
     color: #ffffff;
 }
-.bg-3 {
-    margin: 0;
-    background-color:  #333333;
-    color: #ffffff;
-}
-.bg-4 {
-    margin: 0;
-    background-color: #696969;
-    color: #ffffff;
+
+.live-text {
+    font-size: 12pt;
+    color: red;
 }
 
 .pic{
     width: 300px;
     height: 330px;
+    border-radius: 20px;
+    padding-bottom: 5px;
 }
 
 .picWider{
-    width: 310px;
+    width: 290px;
     height: 330px;
+    border-radius: 20px;
+    padding-bottom: 5px;
 }
 
 .dropdown-menu{
@@ -49,16 +107,15 @@ footer {
     padding: 10px;
     color: #ffffff;
 }
+
 title{
     background-color:LightGray;
     font-size: 15px;
 }
+
 .enjoy{
-    font-size:150%;
-    text-decoration: underline;
-}
-.name{
-    font-size: 45px;
+    padding-top: 10px;
+    font-size: 30px;
 }
 
 .smallBotSpace{
@@ -102,7 +159,7 @@ a{
 }
 
 #contentWord{
-    font-style: italic;
+    font-weight: 700;
     color: white;
 }
 
