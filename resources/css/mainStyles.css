@@ -21,7 +21,7 @@
 .header-content {
     justify-content: center;
     align-items: center;
-    padding: 5%;
+    padding: 50px;
 }
 
 .header {
@@ -37,6 +37,10 @@
     line-height: 1.5;
 }
 
+.austin {
+    color: #8dbfab
+}
+
 .summitStats {
         color: #bfbfbf !important;
         font-weight: 700;
@@ -44,6 +48,15 @@
 
 .summitStats:hover {
     color: #ff6524 !important;
+}
+
+.paylocity {
+    color: #bfbfbf !important;
+    font-weight: 700;
+}
+
+.paylocity:hover {
+color: white !important;
 }
 
 .summitStatsNav:hover {
@@ -82,7 +95,7 @@ a:hover {
 
 .profilePic-container {
     text-align: center;
-    padding: 20px;
+    padding: 50px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -102,7 +115,7 @@ a:hover {
 }
 
 .activityImage{
-    width: 270px;
+    width: 265px;
     height: 330px;
     border-radius: 20px;
     padding-bottom: 5px;
@@ -176,7 +189,7 @@ a{
 
 #contentWord{
     font-weight: 700;
-    color: white;
+    color: #6cac93;
 }
 
 #hiddenContent{
