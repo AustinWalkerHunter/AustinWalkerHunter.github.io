@@ -149,16 +149,6 @@
       </div>
     </div>
 
-    <div id="hiddenContent">
-      <h3>You found hidden content!</h3>
-      <p class="game-meta">Score: <strong id="score">0</strong>&nbsp;&nbsp;·&nbsp;&nbsp;High Score: <strong id="highScore">100</strong></p>
-      <canvas id="canvas" width="300" height="300"></canvas>
-      <div class="game-buttons">
-        <button class="btn-game btn-game-play" id="playGame" onclick="play()">Play!</button>
-        <button class="btn-game btn-game-play" id="restartGame" onclick="restart()">Restart</button>
-        <button class="btn-game btn-game-quit" onclick="hideHiddenContent()">Quit</button>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -182,6 +172,28 @@
       </div>
     </div>
     <iframe class="resume-iframe" id="resumeIframe" title="Austin Hunter Resume"></iframe>
+  </div>
+</div>
+
+<!-- GAME MODAL -->
+<div class="game-overlay" id="gameOverlay">
+  <div class="game-modal">
+    <div class="game-modal-header">
+      <span class="game-modal-title">You found hidden content!</span>
+      <button class="game-modal-close" id="gameModalClose" aria-label="Close game">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="game-modal-body">
+      <p class="game-meta">Score: <strong id="score">0</strong>&nbsp;&nbsp;·&nbsp;&nbsp;High Score: <strong id="highScore">0</strong></p>
+      <canvas id="canvas" width="300" height="300"></canvas>
+      <div class="game-buttons">
+        <button class="btn-game btn-game-play" id="playGame" onclick="play()">Play!</button>
+        <button class="btn-game btn-game-play" id="restartGame" onclick="restart()">Restart</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -226,6 +238,12 @@
 
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && resumeOverlay.classList.contains('active')) closeResume();
+    if (e.key === 'Escape' && document.getElementById('gameOverlay').classList.contains('active')) hideHiddenContent();
+  });
+
+  document.getElementById('gameModalClose').addEventListener('click', hideHiddenContent);
+  document.getElementById('gameOverlay').addEventListener('click', function(e) {
+    if (e.target === document.getElementById('gameOverlay')) hideHiddenContent();
   });
 
   // --- Drawer ---

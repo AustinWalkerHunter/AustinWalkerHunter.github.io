@@ -1,6 +1,6 @@
 function showHiddenContent(){
-    normalView.style.display = "none";
-    hiddenContent.style.display = "block";
+    document.getElementById('gameOverlay').classList.add('active');
+    document.body.classList.add('no-scroll');
     quit = false;
     playing = false;
 }
@@ -17,8 +17,8 @@ function hideHiddenContent(){
     APPLE_BORDER_COLOUR = 'darkred';
     SNAKE_BACKGROUND_COLOUR ='lightgreen';
     SNAKE_BORDER_COLOUR = 'darkgreen';
-    hiddenContent.style.display = "none";
-    normalView.style.display = "block";
+    document.getElementById('gameOverlay').classList.remove('active');
+    document.body.classList.remove('no-scroll');
     restartGame.style.display = "none";
     playGame.style.display = "inline";
     snake = [
@@ -33,6 +33,12 @@ function hideHiddenContent(){
 }
 
 var canvas = document.getElementById("canvas");
+var CANVAS_SIZE = 300;
+var dpr = window.devicePixelRatio || 1;
+canvas.width = CANVAS_SIZE * dpr;
+canvas.height = CANVAS_SIZE * dpr;
+canvas.style.width = CANVAS_SIZE + 'px';
+canvas.style.height = CANVAS_SIZE + 'px';
 
 CANVAS_BACKGROUND_COLOUR = 'white';
 CANVAS_BORDER_COLOUR = 'black';
@@ -41,17 +47,13 @@ APPLE_BORDER_COLOUR = 'darkred';
 SNAKE_BACKGROUND_COLOUR ='lightgreen';
 SNAKE_BORDER_COLOUR = 'darkgreen';
 
-//This returns a 2d drawing context
 var context = canvas.getContext("2d");
+context.scale(dpr, dpr);
 
-//These using the variables above to select colors for the canvas
 context.fillStyle = CANVAS_BACKGROUND_COLOUR;
 context.strokeStyle = CANVAS_BORDER_COLOUR;
-
-
-//These draws a filled rectangle with a border
-context.fillRect(0,0, canvas.width, canvas.height);
-context.strokeRect(0,0, canvas.width, canvas.height);
+context.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+context.strokeRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 
 quit = false;
 playing = false;
@@ -59,7 +61,8 @@ appleX=0;
 appleY=0;
 
 score = 0;
-highScore = 100;
+highScore = parseInt(localStorage.getItem('snakeHighScore')) || 0;
+document.getElementById("highScore").innerHTML = highScore;
 
 //The snake starts at 30 pixels long
 snake = [
@@ -101,13 +104,13 @@ function play(){
     main();
 }
 
+function getSpeed() {
+    return Math.max(60, 120 - Math.floor(score / 20) * 8);
+}
+
 function main() {
     if(isGameOver()){
         restartGame.style.display="inline";
-        if(score>highScore){
-            highScore = score;
-            document.getElementById("highScore").innerHTML = highScore;
-        }
         return;
     }
     if(quit && playing){
@@ -122,7 +125,7 @@ function main() {
         moveSnake();
         drawSnake();
         main();
-    }, 100)
+    }, getSpeed())
 }
 
 
@@ -139,26 +142,31 @@ function drawSnake(){
 }
 
 function moveSnake(){
-    head = {x: snake[0].x +dx, y: snake[0].y + dy};
+    head = {x: snake[0].x + dx, y: snake[0].y + dy};
     snake.unshift(head);
 
     if(head.x == appleX && head.y == appleY){
         generateApple();
         score += 10;
-        if(score>=highScore){
-            document.getElementById("highScore").innerHTML = score;
+        document.getElementById("score").innerHTML = score;
+
+        if(score > highScore){
+            highScore = score;
+            localStorage.setItem('snakeHighScore', highScore);
+            document.getElementById("highScore").innerHTML = highScore;
+        }
+
+        if(score >= 50){
             CANVAS_BACKGROUND_COLOUR = getRandomColor();
             CANVAS_BORDER_COLOUR = getRandomColor();
             APPLE_BACKGROUND_COLOUR = getRandomColor();
             APPLE_BORDER_COLOUR = getRandomColor();
             SNAKE_BACKGROUND_COLOUR = getRandomColor();
             SNAKE_BORDER_COLOUR = getRandomColor();
-
         }
-        document.getElementById("score").innerHTML = score;
-        snake.push({x: 130-score, y: 150})
+    } else {
+        snake.pop();
     }
-    snake.pop();
 }
 
 function isGameOver() {
@@ -167,17 +175,17 @@ function isGameOver() {
         if (gameOver) return true;
     }
      hitLeftWall = snake[0].x < 0;
-     hitRightWall = snake[0].x > canvas.width - 10;
+     hitRightWall = snake[0].x > CANVAS_SIZE - 10;
      hitToptWall = snake[0].y < 0;
-     hitBottomWall = snake[0].y > canvas.height - 10;
+     hitBottomWall = snake[0].y > CANVAS_SIZE - 10;
     return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
 }
 
 function clear(){
     context.fillStyle = CANVAS_BACKGROUND_COLOUR;
     context.strokeStyle = CANVAS_BORDER_COLOUR;
-    context.fillRect(0,0, canvas.width, canvas.height);
-    context.strokeRect(0,0, canvas.width, canvas.height);
+    context.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+    context.strokeRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 }
 
 document.onkeydown = checkKey;
@@ -222,8 +230,8 @@ function random(min, max){
 }
 
 function generateApple(){
-    appleX = random(0, canvas.width-10);
-    appleY = random(0, canvas.height-10);
+    appleX = random(0, CANVAS_SIZE - 10);
+    appleY = random(0, CANVAS_SIZE - 10);
 
     snake.forEach(function isAppleOnSnake(part) {
         appleOnSnake = part.x == appleX && part.y == appleY;
@@ -238,6 +246,40 @@ function drawApple(){
     context.fillRect(appleX, appleY, 10, 10);
     context.strokeRect(appleX, appleY, 10, 10);
 }
+
+var touchStartX = 0;
+var touchStartY = 0;
+
+canvas.addEventListener('touchstart', function(e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    e.preventDefault();
+}, { passive: false });
+
+canvas.addEventListener('touchend', function(e) {
+    if (!playing) return;
+
+    var swipeX = e.changedTouches[0].clientX - touchStartX;
+    var swipeY = e.changedTouches[0].clientY - touchStartY;
+
+    if (Math.abs(swipeX) < 10 && Math.abs(swipeY) < 10) return;
+
+    if (changingDirection) return;
+    changingDirection = true;
+
+    var goingUp = dy === -10;
+    var goingDown = dy === 10;
+    var goingRight = dx === 10;
+    var goingLeft = dx === -10;
+
+    if (Math.abs(swipeX) > Math.abs(swipeY)) {
+        if (swipeX > 0 && !goingLeft)  { dx = 10;  dy = 0; }
+        else if (swipeX < 0 && !goingRight) { dx = -10; dy = 0; }
+    } else {
+        if (swipeY > 0 && !goingUp)   { dx = 0; dy = 10;  }
+        else if (swipeY < 0 && !goingDown) { dx = 0; dy = -10; }
+    }
+}, { passive: false });
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
