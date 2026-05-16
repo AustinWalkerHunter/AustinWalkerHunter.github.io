@@ -1,101 +1,286 @@
 <!DOCTYPE html>
-<html lang="en" class="background">
+<html lang="en">
 <head>
   <title>Austin Hunter</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="./resources/favicon.ico"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139880987-1"></script>
   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-139880987-1');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-139880987-1');
   </script>
-  <link rel="stylesheet" type="text/css" href="resources/css/common.css">
   <link rel="stylesheet" type="text/css" href="resources/css/mainStyles.css">
 </head>
-<body class="main-container">
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Austin Hunter</a>
+    <div class="nav-links">
+      <a href="resources/AustinHunter_Resume.pdf" class="nav-link resume-trigger">Resume</a>
+      <a href="https://github.com/AustinWalkerHunter" target="_blank" class="nav-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank" class="nav-link">LinkedIn</a>
+      <div class="nav-dropdown" id="breDropdown">
+        <button class="nav-dropdown-btn nav-dropdown-btn-brewise" id="breBtn">
+          Brewise
+          <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </button>
-        <a class="navText navbar-brand" href="#index.html">Austin Hunter</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://apps.apple.com/us/app/brewise/id6475216238?platform=iphone" target="_blank">App Store</a>
+          <a href="https://www.freeprivacypolicy.com/live/40cd67b5-85af-4377-bcc3-cfeecba7ee61" target="_blank">Privacy Policy</a>
+        </div>
       </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a class="navText" href="resources/AustinHunter_Resume.pdf" target="_blank">Resume</a></li>
-          <li><a class="navText" href="https://github.com/AustinWalkerHunter" target="_blank">GitHub</a></li>
-          <li><a class="navText" href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank">LinkedIn</a></li>
-          <li><a class="navText summitStatsNav" href="https://apps.apple.com/us/app/brewise/id6475216238?platform=iphone" target="_blank">Brewise</a></li>
-          <li class="dropdown">
-            <a class="navText dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sausalito Whiskey Trail <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="https://apps.apple.com/app/sausalito-whiskey-trail/id6765991672" target="_blank">App Store</a></li>
-              <li><a href="resources/SWT-privacy-policy.html" target="_blank">Privacy Policy</a></li>
-              <li><a href="resources/SWT-support.html" target="_blank">Support Page</a></li>
-            </ul>
-          </li>
-        </ul>
+      <div class="nav-dropdown" id="swtDropdown">
+        <button class="nav-dropdown-btn" id="swtBtn">
+          Sausalito Whiskey Trail
+          <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="https://apps.apple.com/app/sausalito-whiskey-trail/id6765991672" target="_blank">App Store</a>
+          <a href="resources/SWT-privacy-policy.html" target="_blank">Privacy Policy</a>
+          <a href="resources/SWT-support.html" target="_blank">Support Page</a>
+        </div>
       </div>
     </div>
-  </nav>
-  <div class="container-fluid">
-  <div class="header row">
-        <div class="col-sm-7 header-content">
-          <h1 class="header-title TBspace">Hey, I’m <span class="austin">Austin</span> - an Engineering Manager in Boise</h1>
-          <p class="aboutMe-content">I lead the Recognition & Rewards team at <span><a class="paylocity" href="https://www.paylocity.com/products/hr/employee-experience/recognition-rewards/" target="_blank">Paylocity</a></li></span>. Over the last few years, I’ve designed and developed iOS apps, including my latest project, <span><a class="summitStats" href="https://apps.apple.com/us/app/brewise/id6475216238?platform=iphone" target="_blank">Brewise</a></li></span> — a simple coffee brewing app. Outside of work, you’ll usually find me skateboarding, slacklining, or hanging with my dog, Sadie.</p>
-          <div class="aboutMe-email"><a class="aboutMe-email-text" href = "mailto: ahunter916@gmail.com">ahunter916@gmail.com</a></div>
-        </div>
-        
-        <div class="col-sm-5 profilePic-container">
-            <img src="resources/profilePic.jpg" class="img-responsive profilePic">
-        </div>
-   </div>
-   </div> 
-
-  <div class="container-fluid activites-container text-center">
-    <div class="row">
-      <div id="normalView">
-        <h3 class="enjoyText"><a id="contentWord" onclick="showHiddenContent()">3 Things I Enjoy</a></h3>
-        <div class="col-sm-4">
-          <p class="smallBotSpace">Climbing on the sharp end</p>
-          <img  class="activityImage" src="resources/Rock.jpg" >
-          <p class="bottom_space">Black Cliffs, ID</p>
-        </div>
-        <div class="col-sm-4" id="chess">
-          <p class="smallBotSpace">Quick games of Chess</p>
-          <iframe src="https://lichess.org/tv/frame?theme=brown&bg=light" style="width: 290px; height: 320px;" allowtransparency="true" frameborder="0"></iframe>
-          <p class="bottom_space"><span class="live-text">LIVE</span> from <a class="paylocity" href="https://lichess.org/tv">lichess.org</a></p>
-        </div>
-        <div class="col-sm-4">
-          <p class="smallBotSpace">'S' turns on the mountain</p>
-          <img class="activityImage" src="resources/skiing.png">
-          <p class="bottom_space">Snowbowl, AZ</p>
-        </div>
-      </div>
-      <div id="hiddenContent">
-        <h3 class="TBspace">You found hidden content!</h3>
-        <h4>SCORE : <span id="score">0</span></h4>
-        <h4>High Score = <span id="highScore">100</span></h4>
-        <canvas id="canvas" width="300" height="300"></canvas><br>
-        <div>
-          <button class="btn btn-warning TBspace" id="playGame" onclick="play()">Play!</button>
-          <button class="btn btn-warning TBspace" id="restartGame" onclick="restart()">Restart</button>
-          <button class="btn btn-primary TBspace" onclick="hideHiddenContent()">Quit</button>
-        </div>
-      </div>
-   </div>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
-  <script src="snake.js"></script>
+</nav>
+
+<!-- SLIDE-IN DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+  <div class="drawer-header">
+    <span class="drawer-title">Austin Hunter</span>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="drawer-links">
+    <a href="resources/AustinHunter_Resume.pdf" class="drawer-link resume-trigger">Resume</a>
+    <a href="https://github.com/AustinWalkerHunter" target="_blank" class="drawer-link">GitHub</a>
+    <a href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank" class="drawer-link">LinkedIn</a>
+    <div class="drawer-section">
+      <span class="drawer-section-label">Brewise</span>
+      <a href="https://apps.apple.com/us/app/brewise/id6475216238?platform=iphone" target="_blank" class="drawer-sub-link">App Store</a>
+      <a href="https://www.freeprivacypolicy.com/live/40cd67b5-85af-4377-bcc3-cfeecba7ee61" target="_blank" class="drawer-sub-link">Privacy Policy</a>
+    </div>
+    <div class="drawer-section">
+      <span class="drawer-section-label">Sausalito Whiskey Trail</span>
+      <a href="https://apps.apple.com/app/sausalito-whiskey-trail/id6765991672" target="_blank" class="drawer-sub-link">App Store</a>
+      <a href="resources/SWT-privacy-policy.html" target="_blank" class="drawer-sub-link">Privacy Policy</a>
+      <a href="resources/SWT-support.html" target="_blank" class="drawer-sub-link">Support Page</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 class="hero-title">Hey, I'm <span class="accent">Austin</span> — engineer, leader, outdoorsman.</h1>
+      <p class="hero-eyebrow">Engineering Manager · Boise, ID</p>
+      <p class="hero-bio">
+        I lead the Recognition &amp; Rewards team at
+        <a href="https://www.paylocity.com/products/hr/employee-experience/recognition-rewards/" target="_blank">Paylocity</a>.
+        I also love to ship my own things —
+        <a href="https://apps.apple.com/us/app/brewise/id6475216238?platform=iphone" target="_blank">Brewise</a> is one of my iOS apps, a simple coffee brewing guide.
+        Outside of work you can find me skateboarding, sipping coffee, or out with my dog Sadie.
+      </p>
+      <div class="hero-cta">
+        <a href="mailto:ahunter916@gmail.com" class="btn-primary">Get in touch</a>
+        <a href="resources/AustinHunter_Resume.pdf" class="btn-outline resume-trigger">View Resume</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="resources/profilePic.jpg" alt="Austin Hunter">
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section class="activities">
+  <div class="activities-inner">
+    <div class="section-header">
+      <h2 class="section-title"><a id="contentWord" onclick="showHiddenContent()">3 Things I Enjoy</a></h2>
+    </div>
+
+    <div id="normalView">
+      <div class="activities-grid">
+        <div class="activity-card">
+          <div class="activity-card-label">Climbing on the sharp end</div>
+          <div class="activity-card-media">
+            <img src="resources/Rock.jpg" alt="Rock climbing at Black Cliffs">
+          </div>
+          <div class="activity-card-footer">Black Cliffs, ID</div>
+        </div>
+        <div class="activity-card">
+          <div class="activity-card-label">Quick games of Chess</div>
+          <div class="activity-card-media chess-frame-wrapper">
+            <iframe id="chessFrame" src="https://lichess.org/tv/frame?theme=brown&bg=dark" allowtransparency="true" frameborder="0" title="Live chess from Lichess" width="290" height="320"></iframe>
+          </div>
+          <div class="activity-card-footer">
+            <span class="live-badge">LIVE</span> from <a href="https://lichess.org/tv" target="_blank">lichess.org</a>
+          </div>
+        </div>
+        <div class="activity-card">
+          <div class="activity-card-label">'S' turns on the mountain</div>
+          <div class="activity-card-media">
+            <img src="resources/skiing.png" alt="Skiing at Snowbowl">
+          </div>
+          <div class="activity-card-footer">Snowbowl, AZ</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hiddenContent">
+      <h3>You found hidden content!</h3>
+      <p class="game-meta">Score: <strong id="score">0</strong>&nbsp;&nbsp;·&nbsp;&nbsp;High Score: <strong id="highScore">100</strong></p>
+      <canvas id="canvas" width="300" height="300"></canvas>
+      <div class="game-buttons">
+        <button class="btn-game btn-game-play" id="playGame" onclick="play()">Play!</button>
+        <button class="btn-game btn-game-play" id="restartGame" onclick="restart()">Restart</button>
+        <button class="btn-game btn-game-quit" onclick="hideHiddenContent()">Quit</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME MODAL -->
+<div class="resume-overlay" id="resumeOverlay">
+  <div class="resume-modal" id="resumeModal">
+    <div class="resume-modal-header">
+      <span class="resume-modal-title">Austin Hunter — Resume</span>
+      <div class="resume-modal-actions">
+        <a href="resources/AustinHunter_Resume.pdf" download class="resume-download">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 2v8m0 0L5 7m3 3l3-3M2 12.5v.5a1 1 0 001 1h10a1 1 0 001-1v-.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Download
+        </a>
+        <button class="resume-modal-close" id="resumeModalClose" aria-label="Close resume">
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <iframe class="resume-iframe" id="resumeIframe" title="Austin Hunter Resume"></iframe>
+  </div>
+</div>
+
+<script src="snake.js"></script>
+<script>
+  // --- Resume modal ---
+  var resumeOverlay = document.getElementById('resumeOverlay');
+  var resumeIframe = document.getElementById('resumeIframe');
+  var resumeLoaded = false;
+
+  function openResume() {
+    if (!resumeLoaded) {
+      resumeIframe.src = 'resources/AustinHunter_Resume.pdf';
+      resumeLoaded = true;
+    }
+    resumeOverlay.classList.add('active');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeResume() {
+    resumeOverlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  }
+
+  document.querySelectorAll('.resume-trigger').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeDrawer();
+      openResume();
+    });
+  });
+
+  document.getElementById('resumeModalClose').addEventListener('click', closeResume);
+
+  resumeOverlay.addEventListener('click', function(e) {
+    if (e.target === resumeOverlay) closeResume();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && resumeOverlay.classList.contains('active')) closeResume();
+  });
+
+  // --- Drawer ---
+  const drawer = document.getElementById('drawer');
+  const overlay = document.getElementById('drawerOverlay');
+  const hamburger = document.getElementById('hamburger');
+
+  function openDrawer() {
+    drawer.classList.add('active');
+    overlay.classList.add('active');
+    hamburger.classList.add('active');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburger.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  }
+
+  hamburger.addEventListener('click', function() {
+    drawer.classList.contains('active') ? closeDrawer() : openDrawer();
+  });
+
+  document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  drawer.querySelectorAll('.drawer-link, .drawer-sub-link').forEach(function(link) {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  // --- Desktop Dropdowns ---
+  const swtDropdown = document.getElementById('swtDropdown');
+  const swtBtn = document.getElementById('swtBtn');
+  const breDropdown = document.getElementById('breDropdown');
+  const breBtn = document.getElementById('breBtn');
+
+  swtBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    breDropdown.classList.remove('open');
+    swtDropdown.classList.toggle('open');
+  });
+
+  breBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    swtDropdown.classList.remove('open');
+    breDropdown.classList.toggle('open');
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!swtDropdown.contains(e.target)) swtDropdown.classList.remove('open');
+    if (!breDropdown.contains(e.target)) breDropdown.classList.remove('open');
+  });
+
+  // --- Nav scroll shadow ---
+  window.addEventListener('scroll', function() {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+</script>
 </body>
 </html>
