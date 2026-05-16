@@ -558,19 +558,19 @@ body::before {
 .activity-card:hover .activity-card-media img { transform: scale(1.02); }
 
 .chess-frame-wrapper {
-  display: flex;
-  justify-content: center;
+  position: relative;
   overflow: hidden;
   height: 400px;
-  background: #0a160e;
+  background: #121212;
 }
 
 .chess-frame-wrapper iframe {
-  flex-shrink: 0;
+  position: absolute;
   width: 290px;
   height: 320px;
   border: none;
-  /* scale up to fill the taller wrapper: 400/320 = 1.25 */
+  top: 0;
+  left: calc(50% - 145px);
   transform: scale(1.25);
   transform-origin: top center;
 }
@@ -796,9 +796,19 @@ body::before {
 #restartGame { display: none; }
 
 /* === RESPONSIVE === */
+@media (max-width: 1100px) {
+  .chess-frame-wrapper iframe {
+    transform: scale(1.0);
+  }
+}
+
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
+
+  .chess-frame-wrapper iframe {
+    transform: scale(0.9);
+  }
 }
 
 @media (max-width: 768px) {
@@ -827,13 +837,12 @@ body::before {
     gap: 14px;
   }
 
-  .activity-card-media img,
-  .activity-card-media iframe {
+  .activity-card-media img {
     height: 300px;
   }
 
   .chess-frame-wrapper {
-    height: 300px;
+    height: 280px;
   }
 
   .chess-frame-wrapper iframe {
