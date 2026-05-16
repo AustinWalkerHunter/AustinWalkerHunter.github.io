@@ -558,19 +558,18 @@ body::before {
 .activity-card:hover .activity-card-media img { transform: scale(1.02); }
 
 .chess-frame-wrapper {
-  position: relative;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   height: 400px;
-  background: #121212;
+  background: var(--bg-card);
 }
 
 .chess-frame-wrapper iframe {
-  position: absolute;
+  flex-shrink: 0;
   width: 290px;
   height: 320px;
   border: none;
-  top: 0;
-  left: calc(50% - 145px);
   transform: scale(1.25);
   transform-origin: top center;
 }
