@@ -835,6 +835,10 @@ body::before {
   .chess-frame-wrapper {
     height: 300px;
   }
+
+  .chess-frame-wrapper iframe {
+    transform: scale(0.94);
+  }
 }
 
 @media (max-width: 480px) {

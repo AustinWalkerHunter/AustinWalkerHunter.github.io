@@ -99,7 +99,7 @@
       <p class="hero-bio">
         I lead the Recognition &amp; Rewards team at
         <a href="https://www.paylocity.com/products/hr/employee-experience/recognition-rewards/" target="_blank">Paylocity</a>.
-        I also love to ship my own things —
+        I also love to ship my own apps —
         <a href="https://apps.apple.com/us/app/brewise/id6475216238?platform=iphone" target="_blank">Brewise</a> is one of my iOS apps, a simple coffee brewing guide.
         Outside of work you can find me skateboarding, sipping coffee, or out with my dog Sadie.
       </p>
@@ -193,6 +193,10 @@
   var resumeLoaded = false;
 
   function openResume() {
+    if (window.innerWidth < 768) {
+      window.open('resources/AustinHunter_Resume.pdf', '_blank');
+      return;
+    }
     if (!resumeLoaded) {
       resumeIframe.src = 'resources/AustinHunter_Resume.pdf';
       resumeLoaded = true;
