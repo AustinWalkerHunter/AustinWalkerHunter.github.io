@@ -562,7 +562,7 @@ body::before {
   justify-content: center;
   overflow: hidden;
   height: 400px;
-  background: #111;
+  background: #000;
 }
 
 .chess-frame-wrapper iframe {
