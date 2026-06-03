@@ -52,6 +52,17 @@
           <a href="resources/SWT-support.html" target="_blank">Support Page</a>
         </div>
       </div>
+      <div class="nav-dropdown" id="ssDropdown">
+        <button class="nav-dropdown-btn" id="ssBtn">
+          SummitStats
+          <svg class="dropdown-chevron" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="resources/SS-privacy-policy.html" target="_blank">Privacy Policy</a>
+        </div>
+      </div>
       <div class="nav-dropdown" id="purseDropdown">
         <button class="nav-dropdown-btn" id="purseBtn">
           The Purse
@@ -98,6 +109,10 @@
       <a href="https://apps.apple.com/app/sausalito-whiskey-trail/id6765991672" target="_blank" class="drawer-sub-link">App Store</a>
       <a href="resources/SWT-privacy-policy.html" target="_blank" class="drawer-sub-link">Privacy Policy</a>
       <a href="resources/SWT-support.html" target="_blank" class="drawer-sub-link">Support Page</a>
+    </div>
+    <div class="drawer-section">
+      <span class="drawer-section-label">SummitStats</span>
+      <a href="resources/SS-privacy-policy.html" target="_blank" class="drawer-sub-link">Privacy Policy</a>
     </div>
     <div class="drawer-section">
       <span class="drawer-section-label">The Purse</span>
@@ -300,11 +315,14 @@
   const breBtn = document.getElementById('breBtn');
   const purseDropdown = document.getElementById('purseDropdown');
   const purseBtn = document.getElementById('purseBtn');
+  const ssDropdown = document.getElementById('ssDropdown');
+  const ssBtn = document.getElementById('ssBtn');
 
   swtBtn.addEventListener('click', function(e) {
     e.stopPropagation();
     breDropdown.classList.remove('open');
     purseDropdown.classList.remove('open');
+    ssDropdown.classList.remove('open');
     swtDropdown.classList.toggle('open');
   });
 
@@ -312,6 +330,7 @@
     e.stopPropagation();
     swtDropdown.classList.remove('open');
     purseDropdown.classList.remove('open');
+    ssDropdown.classList.remove('open');
     breDropdown.classList.toggle('open');
   });
 
@@ -319,13 +338,23 @@
     e.stopPropagation();
     breDropdown.classList.remove('open');
     swtDropdown.classList.remove('open');
+    ssDropdown.classList.remove('open');
     purseDropdown.classList.toggle('open');
+  });
+
+  ssBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    breDropdown.classList.remove('open');
+    swtDropdown.classList.remove('open');
+    purseDropdown.classList.remove('open');
+    ssDropdown.classList.toggle('open');
   });
 
   document.addEventListener('click', function(e) {
     if (!swtDropdown.contains(e.target)) swtDropdown.classList.remove('open');
     if (!breDropdown.contains(e.target)) breDropdown.classList.remove('open');
     if (!purseDropdown.contains(e.target)) purseDropdown.classList.remove('open');
+    if (!ssDropdown.contains(e.target)) ssDropdown.classList.remove('open');
   });
 
   // --- Nav scroll shadow ---
