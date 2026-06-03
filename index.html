@@ -284,6 +284,7 @@
   const hamburger = document.getElementById('hamburger');
 
   function openDrawer() {
+    document.body.style.top = '-' + window.scrollY + 'px';
     drawer.classList.add('active');
     overlay.classList.add('active');
     hamburger.classList.add('active');
@@ -291,10 +292,13 @@
   }
 
   function closeDrawer() {
+    var scrollY = parseInt(document.body.style.top || '0') * -1;
     drawer.classList.remove('active');
     overlay.classList.remove('active');
     hamburger.classList.remove('active');
     document.body.classList.remove('no-scroll');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollY);
   }
 
   hamburger.addEventListener('click', function() {

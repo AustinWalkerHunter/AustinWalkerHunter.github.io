@@ -36,7 +36,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body.no-scroll { overflow: hidden; }
+body.no-scroll { overflow: hidden; position: fixed; width: 100%; }
 
 a { color: var(--accent); text-decoration: none; transition: color var(--ease); }
 a:hover { color: #fff; }
@@ -297,6 +297,8 @@ body::before {
   padding: 12px;
   gap: 2px;
   flex: 1;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 .drawer-link {
