@@ -246,13 +246,11 @@
       resumeLoaded = true;
     }
     resumeOverlay.classList.add('active');
-    document.documentElement.classList.add('no-scroll');
     document.body.classList.add('no-scroll');
   }
 
   function closeResume() {
     resumeOverlay.classList.remove('active');
-    document.documentElement.classList.remove('no-scroll');
     document.body.classList.remove('no-scroll');
   }
 
@@ -285,20 +283,24 @@
   const overlay = document.getElementById('drawerOverlay');
   const hamburger = document.getElementById('hamburger');
 
+  function preventBodyScroll(e) {
+    if (!drawer.contains(e.target)) e.preventDefault();
+  }
+
   function openDrawer() {
     drawer.classList.add('active');
     overlay.classList.add('active');
     hamburger.classList.add('active');
-    document.documentElement.classList.add('no-scroll');
     document.body.classList.add('no-scroll');
+    document.addEventListener('touchmove', preventBodyScroll, { passive: false });
   }
 
   function closeDrawer() {
     drawer.classList.remove('active');
     overlay.classList.remove('active');
     hamburger.classList.remove('active');
-    document.documentElement.classList.remove('no-scroll');
     document.body.classList.remove('no-scroll');
+    document.removeEventListener('touchmove', preventBodyScroll);
   }
 
   hamburger.addEventListener('click', function() {

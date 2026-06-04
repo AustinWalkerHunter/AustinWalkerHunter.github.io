@@ -36,7 +36,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html.no-scroll,
 body.no-scroll { overflow: hidden; }
 
 a { color: var(--accent); text-decoration: none; transition: color var(--ease); }
@@ -300,6 +299,8 @@ body::before {
   flex: 1;
   overflow-y: auto;
   min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .drawer-link {
