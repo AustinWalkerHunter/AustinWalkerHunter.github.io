@@ -156,7 +156,7 @@ function moveSnake(){
             document.getElementById("highScore").innerHTML = highScore;
         }
 
-        if(score >= 50){
+        if(score >= 30){
             CANVAS_BACKGROUND_COLOUR = getRandomColor();
             CANVAS_BORDER_COLOUR = getRandomColor();
             APPLE_BACKGROUND_COLOUR = getRandomColor();

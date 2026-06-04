@@ -246,11 +246,13 @@
       resumeLoaded = true;
     }
     resumeOverlay.classList.add('active');
+    document.documentElement.classList.add('no-scroll');
     document.body.classList.add('no-scroll');
   }
 
   function closeResume() {
     resumeOverlay.classList.remove('active');
+    document.documentElement.classList.remove('no-scroll');
     document.body.classList.remove('no-scroll');
   }
 
@@ -284,21 +286,19 @@
   const hamburger = document.getElementById('hamburger');
 
   function openDrawer() {
-    document.body.style.top = '-' + window.scrollY + 'px';
     drawer.classList.add('active');
     overlay.classList.add('active');
     hamburger.classList.add('active');
+    document.documentElement.classList.add('no-scroll');
     document.body.classList.add('no-scroll');
   }
 
   function closeDrawer() {
-    var scrollY = parseInt(document.body.style.top || '0') * -1;
     drawer.classList.remove('active');
     overlay.classList.remove('active');
     hamburger.classList.remove('active');
+    document.documentElement.classList.remove('no-scroll');
     document.body.classList.remove('no-scroll');
-    document.body.style.top = '';
-    window.scrollTo(0, scrollY);
   }
 
   hamburger.addEventListener('click', function() {
