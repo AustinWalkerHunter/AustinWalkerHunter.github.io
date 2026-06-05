@@ -86,41 +86,56 @@
 
 <!-- SLIDE-IN DRAWER -->
 <div class="drawer-overlay" id="drawerOverlay"></div>
-<div class="drawer" id="drawer" role="dialog" aria-label="Navigation menu">
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="drawer-header">
-    <span class="drawer-title">Austin Hunter</span>
+    <span class="drawer-logo">Austin Hunter</span>
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">
       <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
       </svg>
     </button>
   </div>
-  <div class="drawer-links">
-    <a href="resources/AustinHunter_Resume.pdf" class="drawer-link resume-trigger">Resume</a>
-    <a href="https://github.com/AustinWalkerHunter" target="_blank" class="drawer-link">GitHub</a>
-    <a href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank" class="drawer-link">LinkedIn</a>
-    <div class="drawer-section">
-      <span class="drawer-section-label">Brewise</span>
-      <a href="https://apps.apple.com/us/app/brewise/id6475216238?platform=iphone" target="_blank" class="drawer-sub-link">App Store</a>
-      <a href="https://www.freeprivacypolicy.com/live/40cd67b5-85af-4377-bcc3-cfeecba7ee61" target="_blank" class="drawer-sub-link">Privacy Policy</a>
+  <nav class="drawer-body">
+    <a href="resources/AustinHunter_Resume.pdf" class="drawer-item resume-trigger">Resume</a>
+    <a href="https://github.com/AustinWalkerHunter" target="_blank" class="drawer-item">GitHub</a>
+    <a href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank" class="drawer-item">LinkedIn</a>
+
+    <div class="drawer-divider"></div>
+    <p class="drawer-section-label">My Apps</p>
+
+    <div class="drawer-app-card">
+      <p class="drawer-app-name">Brewise</p>
+      <div class="drawer-app-links">
+        <a href="https://apps.apple.com/us/app/brewise/id6475216238?platform=iphone" target="_blank">App Store</a>
+        <a href="https://www.freeprivacypolicy.com/live/40cd67b5-85af-4377-bcc3-cfeecba7ee61" target="_blank">Privacy Policy</a>
+      </div>
     </div>
-    <div class="drawer-section">
-      <span class="drawer-section-label">Sausalito Whiskey Trail</span>
-      <a href="https://apps.apple.com/app/sausalito-whiskey-trail/id6765991672" target="_blank" class="drawer-sub-link">App Store</a>
-      <a href="resources/SWT-privacy-policy.html" target="_blank" class="drawer-sub-link">Privacy Policy</a>
-      <a href="resources/SWT-support.html" target="_blank" class="drawer-sub-link">Support Page</a>
+
+    <div class="drawer-app-card">
+      <p class="drawer-app-name">Sausalito Whiskey Trail</p>
+      <div class="drawer-app-links">
+        <a href="https://apps.apple.com/app/sausalito-whiskey-trail/id6765991672" target="_blank">App Store</a>
+        <a href="resources/SWT-privacy-policy.html" target="_blank">Privacy Policy</a>
+        <a href="resources/SWT-support.html" target="_blank">Support</a>
+      </div>
     </div>
-    <div class="drawer-section">
-      <span class="drawer-section-label">SummitStats</span>
-      <a href="resources/SS-privacy-policy.html" target="_blank" class="drawer-sub-link">Privacy Policy</a>
+
+    <div class="drawer-app-card">
+      <p class="drawer-app-name">SummitStats</p>
+      <div class="drawer-app-links">
+        <a href="resources/SS-privacy-policy.html" target="_blank">Privacy Policy</a>
+      </div>
     </div>
-    <div class="drawer-section">
-      <span class="drawer-section-label">The Purse</span>
-      <a href="resources/thePurse-privacy-policy.html" target="_blank" class="drawer-sub-link">Privacy Policy</a>
-      <a href="resources/thePurse-terms.html" target="_blank" class="drawer-sub-link">Terms & Conditions</a>
+
+    <div class="drawer-app-card">
+      <p class="drawer-app-name">The Purse</p>
+      <div class="drawer-app-links">
+        <a href="resources/thePurse-privacy-policy.html" target="_blank">Privacy Policy</a>
+        <a href="resources/thePurse-terms.html" target="_blank">Terms &amp; Conditions</a>
+      </div>
     </div>
-  </div>
-</div>
+  </nav>
+</aside>
 
 <!-- HERO -->
 <section class="hero">
@@ -284,7 +299,7 @@
   const hamburger = document.getElementById('hamburger');
 
   function preventBodyScroll(e) {
-    if (!drawer.contains(e.target)) e.preventDefault();
+    if (!e.target.closest('.drawer-body')) e.preventDefault();
   }
 
   function openDrawer() {
@@ -310,7 +325,7 @@
   document.getElementById('drawerClose').addEventListener('click', closeDrawer);
   overlay.addEventListener('click', closeDrawer);
 
-  drawer.querySelectorAll('.drawer-link, .drawer-sub-link').forEach(function(link) {
+  drawer.querySelectorAll('.drawer-item').forEach(function(link) {
     link.addEventListener('click', closeDrawer);
   });
 
