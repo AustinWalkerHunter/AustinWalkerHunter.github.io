@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About — Austin Hunter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="./resources/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="resources/css/mainStyles.css">
+</head>
+<body>
+
+<div id="pageContent">
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Austin Hunter</a>
+    <div class="nav-links">
+      <a href="resources/AustinHunter_Resume.pdf" target="_blank" class="nav-link">Resume</a>
+      <a href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank" class="nav-link">LinkedIn</a>
+      <a href="about.html" class="nav-link nav-link-active">About</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ACTIVITIES -->
+<section class="activities" style="padding-top: var(--nav-h);">
+  <div class="activities-inner">
+    <div class="section-header">
+      <h2 class="section-title"><a id="contentWord" onclick="showHiddenContent()">3 Things I Enjoy</a></h2>
+    </div>
+
+    <div id="normalView">
+      <div class="activities-grid">
+        <div class="activity-card">
+          <div class="activity-card-label">Climbing on the sharp end</div>
+          <div class="activity-card-media">
+            <img src="resources/Rock.jpg" alt="Rock climbing at Black Cliffs">
+          </div>
+          <div class="activity-card-footer">Black Cliffs, ID</div>
+        </div>
+        <div class="activity-card">
+          <div class="activity-card-label">Quick games of Chess</div>
+          <div class="activity-card-media chess-frame-wrapper">
+            <iframe id="chessFrame" src="https://lichess.org/tv/frame?theme=brown&bg=dark" allowtransparency="true" frameborder="0" title="Live chess from Lichess" width="290" height="320"></iframe>
+          </div>
+          <div class="activity-card-footer">
+            <span class="live-badge">LIVE</span> from <a href="https://lichess.org/tv" target="_blank">lichess.org</a>
+          </div>
+        </div>
+        <div class="activity-card">
+          <div class="activity-card-label">'S' turns on the mountain</div>
+          <div class="activity-card-media">
+            <img src="resources/skiing.png" alt="Skiing at Snowbowl">
+          </div>
+          <div class="activity-card-footer">Snowbowl, AZ</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GAME MODAL -->
+<div class="game-overlay" id="gameOverlay">
+  <div class="game-modal">
+    <div class="game-modal-header">
+      <span class="game-modal-title">You found hidden content!</span>
+      <button class="game-modal-close" id="gameModalClose" aria-label="Close game">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="game-modal-body">
+      <p class="game-meta">Score: <strong id="score">0</strong>&nbsp;&nbsp;·&nbsp;&nbsp;High Score: <strong id="highScore">0</strong></p>
+      <canvas id="canvas" width="300" height="300"></canvas>
+      <div class="game-buttons">
+        <button class="btn-game btn-game-play" id="playGame" onclick="play()">Play!</button>
+        <button class="btn-game btn-game-play" id="restartGame" onclick="restart()">Restart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /#pageContent -->
+
+<!-- SLIDE-IN DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="drawer-header">
+    <span class="drawer-logo">Austin Hunter</span>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <nav class="drawer-body">
+    <a href="resources/AustinHunter_Resume.pdf" target="_blank" class="drawer-item">Resume</a>
+    <a href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank" class="drawer-item">LinkedIn</a>
+    <a href="about.html" class="drawer-item drawer-item-active">About</a>
+  </nav>
+</aside>
+
+<script src="snake.js"></script>
+<script>
+  // --- Drawer ---
+  const drawer = document.getElementById('drawer');
+  const drawerOverlay = document.getElementById('drawerOverlay');
+  const hamburger = document.getElementById('hamburger');
+  const pageContent = document.getElementById('pageContent');
+
+  function openDrawer() {
+    drawer.classList.add('active');
+    drawerOverlay.classList.add('active');
+    hamburger.classList.add('active');
+    pageContent.classList.add('locked');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('active');
+    drawerOverlay.classList.remove('active');
+    hamburger.classList.remove('active');
+    pageContent.classList.remove('locked');
+  }
+
+  hamburger.addEventListener('click', function() {
+    drawer.classList.contains('active') ? closeDrawer() : openDrawer();
+  });
+
+  document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+  drawerOverlay.addEventListener('click', closeDrawer);
+
+  drawer.querySelectorAll('.drawer-item').forEach(function(link) {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('gameOverlay').classList.contains('active')) hideHiddenContent();
+  });
+
+  document.getElementById('gameModalClose').addEventListener('click', hideHiddenContent);
+  document.getElementById('gameOverlay').addEventListener('click', function(e) {
+    if (e.target === document.getElementById('gameOverlay')) hideHiddenContent();
+  });
+
+  // --- Nav scroll shadow ---
+  pageContent.addEventListener('scroll', function() {
+    document.getElementById('nav').classList.toggle('scrolled', pageContent.scrollTop > 10);
+  }, { passive: true });
+</script>
+</body>
+</html>

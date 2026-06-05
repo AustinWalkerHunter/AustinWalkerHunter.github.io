@@ -42,6 +42,7 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 #pageContent.locked { overflow: hidden; }
@@ -534,6 +535,17 @@ body::before {
   font-size: clamp(1.6rem, 3vw, 2.1rem);
   font-weight: 700;
   letter-spacing: -0.025em;
+}
+
+.section-sub {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.section-sub strong {
+  color: var(--text);
+  font-weight: 600;
 }
 
 #contentWord {
@@ -1129,6 +1141,22 @@ body::before {
 }
 
 .app-store-btn svg { flex-shrink: 0; }
+
+.app-coming-soon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  background: rgba(251, 191, 36, 0.08);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  align-self: flex-start;
+  cursor: default;
+}
 
 /* === RESPONSIVE === */
 @media (max-width: 1100px) {

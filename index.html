@@ -28,7 +28,7 @@
     <div class="nav-links">
       <a href="resources/AustinHunter_Resume.pdf" class="nav-link resume-trigger">Resume</a>
       <a href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank" class="nav-link">LinkedIn</a>
-      <a href="apps.html" class="nav-link">My Apps</a>
+      <a href="about.html" class="nav-link">About</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
       <span></span>
@@ -48,7 +48,7 @@
         I lead the Recognition &amp; Rewards team at
         <a href="https://www.paylocity.com/products/hr/employee-experience/recognition-rewards/" target="_blank">Paylocity</a>.
         I also love to ship my own iOS apps —
-        check out <a href="apps.html">My Apps</a> to see what I've built.
+        <a href="#apps">take a look</a> at what I've built.
         Outside of work you can find me skateboarding, sipping coffee, or out with my dog Sadie.
       </p>
       <div class="hero-cta">
@@ -62,41 +62,98 @@
   </div>
 </section>
 
-<!-- ACTIVITIES -->
-<section class="activities">
-  <div class="activities-inner">
+<!-- APPS -->
+<section class="apps-section" id="apps">
+  <div class="apps-inner">
     <div class="section-header">
-      <h2 class="section-title"><a id="contentWord" onclick="showHiddenContent()">3 Things I Enjoy</a></h2>
+      <h2 class="section-title">My Apps</h2>
+      <p class="section-sub">Designed and built for iOS using <strong>React Native</strong> &amp; <strong>Expo</strong>, with backends on <strong>AWS</strong> and <strong>Firebase</strong>.</p>
     </div>
+    <div class="apps-grid">
 
-    <div id="normalView">
-      <div class="activities-grid">
-        <div class="activity-card">
-          <div class="activity-card-label">Climbing on the sharp end</div>
-          <div class="activity-card-media">
-            <img src="resources/Rock.jpg" alt="Rock climbing at Black Cliffs">
-          </div>
-          <div class="activity-card-footer">Black Cliffs, ID</div>
-        </div>
-        <div class="activity-card">
-          <div class="activity-card-label">Quick games of Chess</div>
-          <div class="activity-card-media chess-frame-wrapper">
-            <iframe id="chessFrame" src="https://lichess.org/tv/frame?theme=brown&bg=dark" allowtransparency="true" frameborder="0" title="Live chess from Lichess" width="290" height="320"></iframe>
-          </div>
-          <div class="activity-card-footer">
-            <span class="live-badge">LIVE</span> from <a href="https://lichess.org/tv" target="_blank">lichess.org</a>
+      <div class="app-card">
+        <span class="app-status app-status-live">Live</span>
+        <div class="app-card-top">
+          <img src="resources/brewise.png" alt="Brewise icon" class="app-icon">
+          <div class="app-card-info">
+            <h3 class="app-name">Brewise</h3>
+            <p class="app-desc">A simple, beautiful coffee brewing guide for every method.</p>
           </div>
         </div>
-        <div class="activity-card">
-          <div class="activity-card-label">'S' turns on the mountain</div>
-          <div class="activity-card-media">
-            <img src="resources/skiing.png" alt="Skiing at Snowbowl">
+        <div class="app-card-bottom">
+          <div class="app-card-links">
+            <a href="https://apps.apple.com/us/app/brewise/id6475216238?platform=iphone" target="_blank" class="app-store-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <div class="app-links-meta">
+              <a href="https://www.freeprivacypolicy.com/live/40cd67b5-85af-4377-bcc3-cfeecba7ee61" target="_blank" class="app-link-meta">Privacy Policy</a>
+            </div>
           </div>
-          <div class="activity-card-footer">Snowbowl, AZ</div>
         </div>
       </div>
-    </div>
 
+      <div class="app-card">
+        <span class="app-status app-status-live">Live</span>
+        <div class="app-card-top">
+          <img src="resources/sausalitoWT.png" alt="Sausalito Whiskey Trail icon" class="app-icon">
+          <div class="app-card-info">
+            <h3 class="app-name">Sausalito Whiskey Trail</h3>
+            <p class="app-desc">Your companion for exploring the Sausalito Whiskey Trail.</p>
+          </div>
+        </div>
+        <div class="app-card-bottom">
+          <div class="app-card-links">
+            <a href="https://apps.apple.com/app/sausalito-whiskey-trail/id6765991672" target="_blank" class="app-store-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <div class="app-links-meta">
+              <a href="resources/SWT-privacy-policy.html" target="_blank" class="app-link-meta">Privacy Policy</a>
+              <a href="resources/SWT-support.html" target="_blank" class="app-link-meta">Support</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-card-top">
+          <img src="resources/summitstats.png" alt="SummitStats icon" class="app-icon">
+          <div class="app-card-info">
+            <h3 class="app-name">SummitStats</h3>
+            <p class="app-desc">Log your days on the mountain and track your season stats.</p>
+          </div>
+        </div>
+        <div class="app-card-bottom">
+          <div class="app-card-links">
+            <span class="app-coming-soon-btn">Coming Soon</span>
+            <div class="app-links-meta">
+              <a href="resources/SS-privacy-policy.html" target="_blank" class="app-link-meta">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-card-top">
+          <img src="resources/thepurse.png" alt="The Purse icon" class="app-icon">
+          <div class="app-card-info">
+            <h3 class="app-name">The Purse</h3>
+            <p class="app-desc">Compete with friends across all four majors — pick your golfers, follow the action, and see who cashes out on top.</p>
+          </div>
+        </div>
+        <div class="app-card-bottom">
+          <div class="app-card-links">
+            <span class="app-coming-soon-btn">Coming Soon</span>
+            <div class="app-links-meta">
+              <a href="resources/thePurse-privacy-policy.html" target="_blank" class="app-link-meta">Privacy Policy</a>
+              <a href="resources/thePurse-terms.html" target="_blank" class="app-link-meta">Terms &amp; Conditions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -123,31 +180,9 @@
   </div>
 </div>
 
-<!-- GAME MODAL -->
-<div class="game-overlay" id="gameOverlay">
-  <div class="game-modal">
-    <div class="game-modal-header">
-      <span class="game-modal-title">You found hidden content!</span>
-      <button class="game-modal-close" id="gameModalClose" aria-label="Close game">
-        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </div>
-    <div class="game-modal-body">
-      <p class="game-meta">Score: <strong id="score">0</strong>&nbsp;&nbsp;·&nbsp;&nbsp;High Score: <strong id="highScore">0</strong></p>
-      <canvas id="canvas" width="300" height="300"></canvas>
-      <div class="game-buttons">
-        <button class="btn-game btn-game-play" id="playGame" onclick="play()">Play!</button>
-        <button class="btn-game btn-game-play" id="restartGame" onclick="restart()">Restart</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 </div><!-- /#pageContent -->
 
-<!-- SLIDE-IN DRAWER (outside pageContent so it scrolls independently) -->
+<!-- SLIDE-IN DRAWER -->
 <div class="drawer-overlay" id="drawerOverlay"></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="drawer-header">
@@ -161,11 +196,10 @@
   <nav class="drawer-body">
     <a href="resources/AustinHunter_Resume.pdf" class="drawer-item resume-trigger">Resume</a>
     <a href="https://www.linkedin.com/in/austin-hunter-182105b3/" target="_blank" class="drawer-item">LinkedIn</a>
-    <a href="apps.html" class="drawer-item">My Apps</a>
+    <a href="about.html" class="drawer-item">About</a>
   </nav>
 </aside>
 
-<script src="snake.js"></script>
 <script>
   // --- Resume modal ---
   var resumeOverlay = document.getElementById('resumeOverlay');
@@ -199,19 +233,11 @@
   });
 
   document.getElementById('resumeModalClose').addEventListener('click', closeResume);
-
   resumeOverlay.addEventListener('click', function(e) {
     if (e.target === resumeOverlay) closeResume();
   });
-
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && resumeOverlay.classList.contains('active')) closeResume();
-    if (e.key === 'Escape' && document.getElementById('gameOverlay').classList.contains('active')) hideHiddenContent();
-  });
-
-  document.getElementById('gameModalClose').addEventListener('click', hideHiddenContent);
-  document.getElementById('gameOverlay').addEventListener('click', function(e) {
-    if (e.target === document.getElementById('gameOverlay')) hideHiddenContent();
   });
 
   // --- Drawer ---
