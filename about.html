@@ -35,7 +35,7 @@
 <section class="about-bio" style="padding-top: var(--nav-h);">
   <div class="about-bio-inner">
     <h1 class="about-title">About Me</h1>
-    <p class="about-text">A high school CS course got me hooked. I loved the challenge, and I really liked making things. Seeing a UI come to life with working features hit different. These days I spend my 9-5 leading the Recognition &amp; Rewards team at <a href="https://www.paylocity.com/products/hr/employee-experience/recognition-rewards/" target="_blank">Paylocity</a>, and my off hours building iOS apps on my own terms — picking the stack, making the calls, shipping the thing.</p>
+    <p class="about-text">I started learning to code in high school — a CS class that humbled me pretty quickly. I loved the challenge, and I really liked making things. Seeing a UI come to life with working features hit different. These days I spend my 9-5 leading the Recognition &amp; Rewards team at <a href="https://www.paylocity.com/products/hr/employee-experience/recognition-rewards/" target="_blank">Paylocity</a>, and my off hours building iOS apps on my own terms — picking the stack, making the calls, shipping the thing.</p>
   </div>
 </section>
 
@@ -192,24 +192,57 @@
 
 <script src="snake.js"></script>
 <script>
-  // --- Carousel ---
+  // --- Carousel (infinite loop) ---
   var carouselTrack = document.getElementById('carouselTrack');
   var carouselDots = document.querySelectorAll('.carousel-dot');
   var totalSlides = 13;
-  var currentSlide = 0;
 
-  function goToSlide(index) {
-    currentSlide = (index + totalSlides) % totalSlides;
-    carouselTrack.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-    carouselDots.forEach(function(dot, i) {
-      dot.classList.toggle('active', i === currentSlide);
-    });
+  // Clone first and last slides so wrapping feels seamless
+  var realSlides = Array.from(carouselTrack.querySelectorAll('.carousel-slide'));
+  carouselTrack.appendChild(realSlides[0].cloneNode(true));
+  carouselTrack.insertBefore(realSlides[totalSlides - 1].cloneNode(true), realSlides[0]);
+
+  // domIndex 0 = last-clone, 1..totalSlides = real slides, totalSlides+1 = first-clone
+  var domIndex = 1;
+
+  function jumpTo(index) {
+    carouselTrack.style.transition = 'none';
+    carouselTrack.style.transform = 'translateX(-' + (index * 100) + '%)';
+    carouselTrack.offsetHeight; // force reflow
   }
 
-  document.getElementById('carouselPrev').addEventListener('click', function() { goToSlide(currentSlide - 1); });
-  document.getElementById('carouselNext').addEventListener('click', function() { goToSlide(currentSlide + 1); });
+  function animateTo(index) {
+    carouselTrack.style.transition = 'transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)';
+    carouselTrack.style.transform = 'translateX(-' + (index * 100) + '%)';
+  }
+
+  function getRealIndex() {
+    if (domIndex === 0) return totalSlides - 1;
+    if (domIndex === totalSlides + 1) return 0;
+    return domIndex - 1;
+  }
+
+  function updateDots() {
+    var ri = getRealIndex();
+    carouselDots.forEach(function(dot, i) { dot.classList.toggle('active', i === ri); });
+  }
+
+  jumpTo(domIndex);
+  updateDots();
+
+  // After animating to a clone, silently snap to the real slide
+  carouselTrack.addEventListener('transitionend', function() {
+    if (domIndex === 0) { domIndex = totalSlides; jumpTo(domIndex); }
+    else if (domIndex === totalSlides + 1) { domIndex = 1; jumpTo(domIndex); }
+  });
+
+  function goNext() { domIndex++; animateTo(domIndex); updateDots(); }
+  function goPrev() { domIndex--; animateTo(domIndex); updateDots(); }
+
+  document.getElementById('carouselNext').addEventListener('click', goNext);
+  document.getElementById('carouselPrev').addEventListener('click', goPrev);
   carouselDots.forEach(function(dot, i) {
-    dot.addEventListener('click', function() { goToSlide(i); });
+    dot.addEventListener('click', function() { domIndex = i + 1; animateTo(domIndex); updateDots(); });
   });
 
   // Swipe support
@@ -218,7 +251,7 @@
   carouselViewport.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
   carouselViewport.addEventListener('touchend', function(e) {
     var diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) goToSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
+    if (Math.abs(diff) > 40) diff > 0 ? goNext() : goPrev();
   });
 
   // --- Drawer ---
