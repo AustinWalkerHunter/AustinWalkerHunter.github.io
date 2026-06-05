@@ -378,8 +378,8 @@
   });
 
   // --- Nav scroll shadow ---
-  window.addEventListener('scroll', function() {
-    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+  pageContent.addEventListener('scroll', function() {
+    document.getElementById('nav').classList.toggle('scrolled', pageContent.scrollTop > 10);
   }, { passive: true });
 </script>
 </body>
