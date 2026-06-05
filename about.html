@@ -31,8 +31,87 @@
   </div>
 </nav>
 
+<!-- BIO -->
+<section class="about-bio" style="padding-top: var(--nav-h);">
+  <div class="about-bio-inner">
+    <h1 class="about-title">About Me</h1>
+    <p class="about-text">A high school CS course got me hooked. I loved the challenge, and I really liked making things. Seeing a UI come to life with working features hit different. These days I spend my 9-5 leading the Recognition &amp; Rewards team at <a href="https://www.paylocity.com/products/hr/employee-experience/recognition-rewards/" target="_blank">Paylocity</a>, and my off hours building iOS apps on my own terms — picking the stack, making the calls, shipping the thing.</p>
+  </div>
+</section>
+
+<!-- PHOTO CAROUSEL -->
+<section class="carousel-section">
+  <div class="carousel-wrap">
+    <div class="carousel-viewport">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide"><img src="resources/photos/IMG_0056.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_4778.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_6176.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_7062.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_E7804.gif" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_7974.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_8090.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_8557.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_7859.JPG" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_8859.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_8963.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_9564.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/Tezza-1840.JPG" alt="Photo"></div>
+      </div>
+      <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Previous photo">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Next photo">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="carousel-dots" id="carouselDots">
+      <button class="carousel-dot active" aria-label="Photo 1"></button>
+      <button class="carousel-dot" aria-label="Photo 2"></button>
+      <button class="carousel-dot" aria-label="Photo 3"></button>
+      <button class="carousel-dot" aria-label="Photo 4"></button>
+      <button class="carousel-dot" aria-label="Photo 5"></button>
+      <button class="carousel-dot" aria-label="Photo 6"></button>
+      <button class="carousel-dot" aria-label="Photo 7"></button>
+      <button class="carousel-dot" aria-label="Photo 8"></button>
+      <button class="carousel-dot" aria-label="Photo 9"></button>
+      <button class="carousel-dot" aria-label="Photo 10"></button>
+      <button class="carousel-dot" aria-label="Photo 11"></button>
+      <button class="carousel-dot" aria-label="Photo 12"></button>
+      <button class="carousel-dot" aria-label="Photo 13"></button>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENTLY -->
+<section class="currently-section">
+  <div class="currently-inner">
+    <div class="section-header">
+      <h2 class="section-title">Currently</h2>
+    </div>
+    <div class="currently-list">
+      <div class="currently-item">
+        <span class="currently-label">Reading</span>
+        <span class="currently-value">Silo series by <strong>Hugh Howey</strong></span>
+      </div>
+      <div class="currently-item">
+        <span class="currently-label">Traveling</span>
+        <span class="currently-value">Knocking out European countries one trip at a time with my wife</span>
+      </div>
+      <div class="currently-item">
+        <span class="currently-label">At Home</span>
+        <span class="currently-value">Skating, yard work, and doing whatever Sadie wants</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ACTIVITIES -->
-<section class="activities" style="padding-top: var(--nav-h);">
+<section class="activities">
   <div class="activities-inner">
     <div class="section-header">
       <h2 class="section-title"><a id="contentWord" onclick="showHiddenContent()">3 Things I Enjoy</a></h2>
@@ -113,6 +192,35 @@
 
 <script src="snake.js"></script>
 <script>
+  // --- Carousel ---
+  var carouselTrack = document.getElementById('carouselTrack');
+  var carouselDots = document.querySelectorAll('.carousel-dot');
+  var totalSlides = 13;
+  var currentSlide = 0;
+
+  function goToSlide(index) {
+    currentSlide = (index + totalSlides) % totalSlides;
+    carouselTrack.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+    carouselDots.forEach(function(dot, i) {
+      dot.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  document.getElementById('carouselPrev').addEventListener('click', function() { goToSlide(currentSlide - 1); });
+  document.getElementById('carouselNext').addEventListener('click', function() { goToSlide(currentSlide + 1); });
+  carouselDots.forEach(function(dot, i) {
+    dot.addEventListener('click', function() { goToSlide(i); });
+  });
+
+  // Swipe support
+  var touchStartX = 0;
+  var carouselViewport = document.querySelector('.carousel-viewport');
+  carouselViewport.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+  carouselViewport.addEventListener('touchend', function(e) {
+    var diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goToSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
+  });
+
   // --- Drawer ---
   const drawer = document.getElementById('drawer');
   const drawerOverlay = document.getElementById('drawerOverlay');
