@@ -55,7 +55,8 @@
         <div class="carousel-slide"><img src="resources/photos/IMG_7859.JPG" alt="Photo"></div>
         <div class="carousel-slide"><img src="resources/photos/IMG_8859.jpg" alt="Photo"></div>
         <div class="carousel-slide"><img src="resources/photos/IMG_8963.jpg" alt="Photo"></div>
-        <div class="carousel-slide"><img src="resources/photos/IMG_9564.jpg" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/image0.JPEG" alt="Photo"></div>
+        <div class="carousel-slide"><img src="resources/photos/IMG_1374.jpg" alt="Photo"></div>
         <div class="carousel-slide"><img src="resources/photos/Tezza-1840.JPG" alt="Photo"></div>
       </div>
       <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Previous photo">
@@ -83,6 +84,7 @@
       <button class="carousel-dot" aria-label="Photo 11"></button>
       <button class="carousel-dot" aria-label="Photo 12"></button>
       <button class="carousel-dot" aria-label="Photo 13"></button>
+      <button class="carousel-dot" aria-label="Photo 14"></button>
     </div>
   </div>
 </section>
@@ -195,7 +197,7 @@
   // --- Carousel (infinite loop) ---
   var carouselTrack = document.getElementById('carouselTrack');
   var carouselDots = document.querySelectorAll('.carousel-dot');
-  var totalSlides = 13;
+  var totalSlides = 14;
 
   // Clone first and last slides so wrapping feels seamless
   var realSlides = Array.from(carouselTrack.querySelectorAll('.carousel-slide'));
