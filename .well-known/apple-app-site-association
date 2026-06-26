@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["ET5P2CXARP.com.austinhunter.thepurse"],
+        "components": [
+          { "/": "/join/*", "comment": "Private group invite links" },
+          { "/": "/community/*", "comment": "Community pool links" }
+        ]
+      }
+    ]
+  }
+}
