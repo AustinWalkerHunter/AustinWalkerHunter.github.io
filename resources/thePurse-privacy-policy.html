@@ -76,6 +76,22 @@
         a:hover {
             color: #0d2818;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 25px;
+            font-size: 0.95rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid #E5E7EB;
+            vertical-align: top;
+        }
+        th {
+            color: #1B4332;
+            background: #F3F4F6;
+        }
         .footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -99,100 +115,118 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: June 23, 2026</p>
+        <p class="last-updated">Last Updated: September 12, 2026</p>
 
         <div class="highlight">
-            <p><strong>At The Purse, we take your privacy seriously.</strong> This Privacy Policy explains how we collect, use, protect, and share your information when you use our mobile application and services.</p>
+            <p><strong>At The Purse, we take your privacy seriously.</strong> This Privacy Policy explains how we collect, use, protect, and share your information when you use The Purse on iOS or Android. The short version: we collect what the game needs to work, we share it only with the members of your groups, we never sell it, and you can delete all of it from inside the app.</p>
         </div>
 
         <h2>1. Introduction</h2>
-        <p>The Purse ("we," "us," "our," or "Company") is committed to protecting your privacy. This Privacy Policy describes our practices regarding the collection and use of information through our mobile application (the "App").</p>
+        <p>The Purse ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy describes our practices regarding the collection and use of information through our mobile application on the Apple App Store and Google Play (the "App") and our website at thepurse.netlify.app.</p>
         <p>By downloading, installing, or using The Purse, you agree to the terms of this Privacy Policy. If you do not agree with our privacy practices, please do not use the App.</p>
 
         <h2>2. Information We Collect</h2>
 
         <h3>2.1 Information You Provide Directly</h3>
         <ul>
-            <li><strong>Authentication Data:</strong> When you sign in using Apple Sign In, we receive your email address and name</li>
-            <li><strong>Profile Information:</strong> Display name, profile photo, handicap (if provided), and Venmo username</li>
-            <li><strong>Tournament Data:</strong> Your tournament picks, entries, and group memberships</li>
-            <li><strong>Communication:</strong> Messages, feedback, or support requests you send us</li>
+            <li><strong>Sign-in Data:</strong> On iOS, when you sign in with Apple, we receive your name and an email address (which may be an Apple private relay address if you choose to hide your email). On Android, when you sign in with Google, we receive your name, email address, and Google profile photo. We never receive or store your Apple ID or Google password, and we do not receive access to any other data in those accounts.</li>
+            <li><strong>Profile Information:</strong> Your display name, an optional profile photo or emoji avatar, an optional golf handicap, and an optional payment handle (for example a Venmo username) that you choose to show to your group members.</li>
+            <li><strong>Game Data:</strong> Your tournament picks and entries, the groups you create or join, and any announcements you post to a group.</li>
+            <li><strong>Communication:</strong> Feedback or support requests you send us by email.</li>
         </ul>
 
         <h3>2.2 Information Collected Automatically</h3>
         <ul>
-            <li><strong>Device Information:</strong> Device type, operating system, unique identifiers, mobile network information</li>
-            <li><strong>Usage Data:</strong> Features used, actions taken, time spent in the App, crash reports</li>
-            <li><strong>Camera:</strong> If you choose to upload a profile photo, we access your camera or photo library</li>
+            <li><strong>Device Information:</strong> Device type, operating system version, and the App version, used to keep the App working correctly on your device.</li>
+            <li><strong>Push Notification Token:</strong> If you turn on notifications, we store a device push token so we can deliver alerts. Turning notifications off in the App's Settings removes the token from our servers.</li>
+            <li><strong>Camera and Photo Library:</strong> Only if you choose to upload a profile photo. The photo you select is stored with your profile; we do not access any other photos.</li>
         </ul>
+        <p>The App does <strong>not</strong> use third-party analytics or advertising software, does not use the advertising identifier on either platform, does not collect your location, and does not collect your contacts.</p>
 
         <h3>2.3 Information from Third Parties</h3>
         <ul>
-            <li><strong>Organizer Payment Info:</strong> Group organizers may optionally display a Venmo username as a convenience for external payment arrangements between members. The Purse does not integrate with Venmo, process payments, or receive any data from Venmo.</li>
-            <li><strong>Public Data:</strong> PGA Tour leaderboard data and tournament information from ESPN</li>
+            <li><strong>Public Golf Data:</strong> Tournament schedules, fields, leaderboards, and prize money from ESPN and the PGA Tour. This is public data about professional golfers; nothing about you is sent to ESPN or the PGA Tour.</li>
+            <li><strong>Organizer Payment Info:</strong> Group organizers may optionally display a payment handle as a convenience for arrangements between members. The Purse does not integrate with Venmo or any payment service, does not process payments, and receives no payment data.</li>
         </ul>
 
         <h2>3. How We Use Your Information</h2>
         <p>We use the information we collect for the following purposes:</p>
         <ul>
-            <li>To provide and maintain the App and its features</li>
-            <li>To authenticate your identity and secure your account</li>
-            <li>To track tournament entries, picks, and standings</li>
-            <li>To calculate scores and earnings</li>
-            <li>To send you notifications about tournament updates, payment reminders, and results</li>
-            <li>To respond to your inquiries and provide customer support</li>
-            <li>To analyze usage patterns and improve the App</li>
+            <li>To sign you in and keep your account secure</li>
+            <li>To run the game: record your picks, track entries and group memberships, and calculate standings and results</li>
+            <li>To show your display name, avatar, picks, and results to the other members of your groups</li>
+            <li>To send you notifications you have turned on, such as picks opening, picks due, round and final results, and group announcements</li>
+            <li>To respond to your support requests</li>
+            <li>To detect and prevent abuse or security issues</li>
             <li>To comply with legal obligations</li>
-            <li>To detect and prevent fraud or security issues</li>
         </ul>
 
-        <h2>4. Third-Party Services</h2>
+        <h2>4. Who Can See Your Information</h2>
+        <p>We do not sell your personal information, and we do not share it with third parties for their own marketing. Your information is visible as follows:</p>
+        <ul>
+            <li><strong>Members of your groups</strong> can see your display name, avatar, picks (once picks lock), results, trophies, and any payment handle you chose to show.</li>
+            <li><strong>Community pools</strong> are open to any user of the App. If you join one, the same information is visible to everyone in that pool.</li>
+            <li><strong>Service providers</strong> listed in Section 5 process data on our behalf to run the App.</li>
+        </ul>
 
-        <h3>4.1 Firebase (Google)</h3>
-        <p>We use Firebase for authentication, real-time database services, and cloud functions. Firebase collects certain device and usage information. See <a href="https://firebase.google.com/support/privacy" target="_blank">Google Firebase Privacy Policy</a>.</p>
+        <h2>5. Third-Party Services</h2>
 
-        <h3>4.2 External Payments</h3>
-        <p><strong>Important:</strong> The Purse does not process, hold, or distribute payments of any kind. Group organizers may optionally display a Venmo username so members can arrange entry fee payments directly between themselves outside the App. The Purse has no integration with Venmo and receives no payment data from any payment processor.</p>
+        <h3>5.1 Firebase (Google)</h3>
+        <p>We use Firebase for sign-in, our database, file storage for profile photos, server functions, and (on Android) delivery of push notifications through Firebase Cloud Messaging. Firebase processes data on our behalf under Google's terms. See the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security page</a>.</p>
 
-        <h3>4.3 Apple Sign In</h3>
-        <p>We use Apple's authentication service to let you sign in securely. Your basic profile information is subject to Apple's privacy policy. See <a href="https://www.apple.com/privacy/" target="_blank">Apple Privacy Policy</a>.</p>
+        <h3>5.2 Sign in with Apple (iOS)</h3>
+        <p>On iOS we use Apple's sign-in service. The information Apple shares with us is described in Section 2.1 and is subject to the <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.</p>
 
-        <h2>5. Data Retention</h2>
-        <p>We retain your information for as long as your account is active. When you delete your account, we will remove your personal data within 30 days, except where we are legally required to retain it. Historical tournament data and standings may be retained for competitive record purposes.</p>
+        <h3>5.3 Google Sign-In (Android)</h3>
+        <p>On Android we use Google's sign-in service. The information Google shares with us is described in Section 2.1 and is subject to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
 
-        <h2>6. Data Security</h2>
+        <h3>5.4 Push Notifications</h3>
+        <p>Notifications are delivered through Apple Push Notification service on iOS and Firebase Cloud Messaging on Android, routed by Expo's push notification service. These services receive your device token and the content of each notification in order to deliver it. See the <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo Privacy Policy</a>.</p>
+
+        <h3>5.5 External Payments</h3>
+        <p><strong>Important:</strong> The Purse does not process, hold, or distribute payments of any kind. Group organizers may optionally display a payment handle so members can arrange entry fee payments directly between themselves outside the App. The Purse has no integration with Venmo or any payment processor and receives no payment data.</p>
+
+        <h2>6. Data Retention</h2>
+        <p>We keep your information for as long as your account is active. When you delete your account (Section 8), your profile, sign-in record, profile photo, push token, and your picks for events that have not yet been played are removed immediately.</p>
+        <p>Results from events you have already played remain part of your groups' historical standings, because they are also the other members' results. Those records show the display name and avatar you used at the time and are no longer connected to a live account.</p>
+
+        <h2>7. Data Security</h2>
         <p>We implement industry-standard security measures to protect your information, including:</p>
         <ul>
-            <li>Encryption of data in transit (HTTPS/TLS)</li>
-            <li>Secure authentication via Apple Sign In</li>
-            <li>Regular security audits</li>
-            <li>Limited access to personal data by authorized personnel only</li>
+            <li>Encryption of all data in transit (HTTPS/TLS)</li>
+            <li>Sign-in through Apple and Google; we never store passwords</li>
+            <li>Server-side access rules so that group data is readable only by that group's members</li>
+            <li>Access to personal data limited to the App's operator</li>
         </ul>
-        <p>However, no security system is impenetrable. While we strive to protect your information, we cannot guarantee absolute security.</p>
+        <p>No security system is impenetrable. While we strive to protect your information, we cannot guarantee absolute security.</p>
 
-        <h2>7. Your Privacy Rights</h2>
+        <h2 id="delete-account">8. Deleting Your Account</h2>
+        <p>You can delete your account at any time from inside the App: open <strong>Settings</strong>, scroll to the bottom, and tap <strong>Delete Account</strong>. You will be asked to confirm with your Apple or Google sign-in. Deletion is immediate and permanent and removes everything described in Section 6.</p>
+        <p>If you can no longer access the App, email <a href="mailto:ahunter916@gmail.com">ahunter916@gmail.com</a> from the email address on your account with the subject "Delete my account" and we will delete it within 30 days.</p>
 
-        <h3>7.1 Access & Portability</h3>
+        <h2>9. Your Privacy Rights</h2>
+
+        <h3>9.1 Access and Portability</h3>
         <p>You have the right to request a copy of your personal data. Contact us at <a href="mailto:ahunter916@gmail.com">ahunter916@gmail.com</a> to request your data in a portable format.</p>
 
-        <h3>7.2 Correction & Deletion</h3>
-        <p>You can update your profile information directly in the App. You may request deletion of your account and associated personal data at any time by contacting us.</p>
+        <h3>9.2 Correction</h3>
+        <p>You can update your display name, avatar, handicap, and payment handle directly in the App under Settings.</p>
 
-        <h3>7.3 Opt-Out</h3>
-        <p>You can disable push notifications and marketing emails through your App settings or by contacting us.</p>
+        <h3>9.3 Notifications</h3>
+        <p>You can turn push notifications on or off at any time in the App's Settings, or in your device's notification settings. We do not send marketing emails.</p>
 
-        <h2>8. California Privacy Rights (CCPA & CPRA)</h2>
+        <h2>10. California Privacy Rights (CCPA and CPRA)</h2>
         <p>If you are a California resident, you have the right to:</p>
         <ul>
-            <li><strong>Know:</strong> What personal information is collected and how it's used</li>
-            <li><strong>Delete:</strong> Request deletion of personal information we've collected</li>
-            <li><strong>Opt-Out:</strong> Opt out of the sale or sharing of personal information (we do not sell or share your data)</li>
+            <li><strong>Know:</strong> What personal information is collected and how it is used</li>
+            <li><strong>Delete:</strong> Request deletion of personal information we have collected</li>
+            <li><strong>Opt Out:</strong> Opt out of the sale or sharing of personal information (we do not sell or share your data)</li>
             <li><strong>Non-Discrimination:</strong> We do not discriminate against users who exercise their privacy rights</li>
         </ul>
         <p>To exercise these rights, email <a href="mailto:ahunter916@gmail.com">ahunter916@gmail.com</a> with "California Privacy Request" in the subject line.</p>
 
-        <h2>9. European & UK Privacy Rights (GDPR / UK GDPR)</h2>
-        <p>If you are located in the European Union or the United Kingdom, you have additional rights under the General Data Protection Regulation (GDPR) or UK GDPR respectively:</p>
+        <h2>11. European and UK Privacy Rights (GDPR / UK GDPR)</h2>
+        <p>If you are located in the European Union or the United Kingdom, you have additional rights under the General Data Protection Regulation (GDPR) or UK GDPR:</p>
         <ul>
             <li><strong>Right to Access:</strong> You can request a copy of your personal data</li>
             <li><strong>Right to Rectification:</strong> You can request corrections to inaccurate data</li>
@@ -203,35 +237,31 @@
         </ul>
         <p>To exercise these rights, contact us at <a href="mailto:ahunter916@gmail.com">ahunter916@gmail.com</a> with "GDPR Request" or "UK GDPR Request" in the subject line.</p>
 
-        <h2>10. Children's Privacy</h2>
-        <p>The Purse is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that a child under 13 has provided us with personal information, we will delete such information immediately.</p>
+        <h2>12. Children's Privacy</h2>
+        <p>The Purse is intended for adults and is not directed at children. We do not knowingly collect personal information from anyone under the age of 13. If we become aware that a child under 13 has provided us with personal information, we will delete that information immediately.</p>
 
-        <h2>11. Do Not Track Signals</h2>
-        <p>Some browsers include a "Do Not Track" feature. Because there is no consistent industry standard for DNT recognition, The Purse does not currently respond to DNT browser signals. However, you can limit tracking through your device settings.</p>
+        <h2>13. International Data Transfers</h2>
+        <p>Our servers are operated by Firebase in the United States. If you use the App from outside the United States, your information is transferred to, stored in, and processed in the United States, where data protection laws may differ from those in your country. By using The Purse, you consent to this transfer.</p>
 
-        <h2>12. International Data Transfers</h2>
-        <p>Your information may be transferred to, stored in, and processed in countries other than your country of residence. These countries may have data protection laws that differ from your home country. By using The Purse, you consent to such transfers.</p>
+        <h2>14. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy periodically to reflect changes in our practices or applicable law. We will post the updated policy at this address and update the date at the top. If a change is material, we will also tell you through the App. Your continued use of the App after such changes constitutes your acceptance of the updated Privacy Policy.</p>
 
-        <h2>13. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy periodically to reflect changes in our practices or applicable law. We will notify you of material changes via email or through the App. Your continued use of the App after such changes constitutes your acceptance of the updated Privacy Policy.</p>
-
-        <h2>14. Contact Us</h2>
+        <h2>15. Contact Us</h2>
         <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
         <ul>
             <li><strong>Email:</strong> <a href="mailto:ahunter916@gmail.com">ahunter916@gmail.com</a></li>
-            <li><strong>App Support:</strong> Use the contact form within the App</li>
         </ul>
 
-        <h2>15. Additional Information</h2>
+        <h2>16. Additional Information</h2>
 
-        <h3>15.1 Cookies & Similar Technologies</h3>
-        <p>We use cookies and similar tracking technologies in our web-based services. You can control cookie settings through your browser preferences.</p>
+        <h3>16.1 Our Website</h3>
+        <p>Our website at thepurse.netlify.app hosts group invite links and information about the App. It is a static site that does not set cookies and does not track visitors.</p>
 
-        <h3>15.2 Social Features</h3>
-        <p>The Purse allows you to join groups and compete with friends. Information you choose to share with groups (name, photo, picks) may be visible to other group members.</p>
+        <h3>16.2 Social Features</h3>
+        <p>The Purse allows you to join groups and compete with friends. Information you choose to share with a group (name, avatar, picks, results, announcements) is visible to the other members of that group, and information shared in a community pool is visible to everyone in that pool.</p>
 
-        <h3>15.3 Analytics & Performance</h3>
-        <p>We analyze app performance and user behavior using Firebase. This data is aggregated and used to improve the App.</p>
+        <h3>16.3 Analytics and Advertising</h3>
+        <p>The App does not use third-party analytics, crash-reporting, or advertising software, and does not use the advertising identifier on iOS or Android. The only usage information we hold is what our own servers record while providing the service.</p>
 
         <div class="footer">
             <p><strong>The Purse Privacy Policy</strong></p>
