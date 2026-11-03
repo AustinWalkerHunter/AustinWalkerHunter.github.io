@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sausalito Whiskey Trail — Android Beta</title>
+<!--
+  Drop-in page for the landing site (serve at /android). All three links are
+  final. When Play production is ever granted, this page can be replaced by
+  a plain Play link — see constants/storeLinks.js in the app repo
+  ("THE SWITCH").
+-->
+<style>
+  :root {
+    --cream: #FFF9F1; --oak: #2a1200; --oak-soft: #5d4a37;
+    --amber: #b06a1e; --amber-deep: #8a4f0f; --card: #ffffff; --line: #ead9c2;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--cream); color: var(--oak);
+    font: 17px/1.55 -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding: 36px 18px 64px;
+  }
+  main { max-width: 560px; margin: 0 auto; }
+  h1 { font-size: 26px; line-height: 1.2; margin-bottom: 6px; }
+  .sub { color: var(--oak-soft); margin-bottom: 22px; }
+  .account-note {
+    background: #fdeed7; border: 1px solid var(--line); border-radius: 12px;
+    padding: 13px 16px; font-size: 15px; margin-bottom: 26px;
+  }
+  .account-note strong { color: var(--amber-deep); }
+  .step {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px; margin-bottom: 14px;
+  }
+  .step-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .num {
+    width: 30px; height: 30px; border-radius: 15px; flex: none;
+    background: var(--amber); color: #fff; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step h2 { font-size: 18px; }
+  .step p { color: var(--oak-soft); font-size: 15px; margin-bottom: 12px; }
+  .btn {
+    display: inline-block; background: var(--amber); color: #fff;
+    text-decoration: none; font-weight: 700; font-size: 16px;
+    padding: 12px 20px; border-radius: 12px;
+  }
+  .btn.play { background: #1f1f1f; }
+  .hint { font-size: 13px; color: var(--oak-soft); margin-top: 8px; margin-bottom: 0; }
+  footer { margin-top: 30px; font-size: 13px; color: var(--oak-soft); text-align: center; }
+  footer a { color: var(--amber-deep); }
+</style>
+</head>
+<body>
+<main>
+  <h1>🥃 Sausalito Whiskey Trail<br>Android Beta</h1>
+  <p class="sub">Three quick steps and you're installing from Google Play.</p>
+
+  <div class="account-note">
+    <strong>Before you start:</strong> use the <strong>same Google account</strong> that's
+    signed in to the Play Store on your phone for all three steps. A different
+    account is the #1 reason the install button doesn't appear.
+  </div>
+
+  <div class="step">
+    <div class="step-head"><div class="num">1</div><h2>Join the testers group</h2></div>
+    <p>Our beta runs through a Google Group — joining puts you on the list.</p>
+    <a class="btn" href="https://groups.google.com/g/sausalito-whiskey-trail-testers">Join the group</a>
+    <p class="hint">On the page that opens, tap <b>“Join group”</b>. No posts, no emails — it's just the list.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><div class="num">2</div><h2>Become a tester</h2></div>
+    <p>Tell Google Play you're in.</p>
+    <a class="btn" href="https://play.google.com/apps/testing/com.atowndoggie.sausalitowhiskeytrail">Become a tester</a>
+    <p class="hint">Tap <b>“Become a tester”</b> on the page that opens.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><div class="num">3</div><h2>Install from Google Play</h2></div>
+    <p>Now the real Play Store listing works for you.</p>
+    <a class="btn play" href="https://play.google.com/store/apps/details?id=com.atowndoggie.sausalitowhiskeytrail">Get it on Google Play</a>
+    <p class="hint">If Play says <b>“item not found”</b>, wait a few minutes after step 2 and try again.</p>
+  </div>
+
+  <footer>
+    Sixteen waterfront stops · 250 years of Sausalito history · a dram at every one.<br>
+    On iPhone? <a href="https://apps.apple.com/app/sausalito-whiskey-trail/id6765991672">Get it on the App Store</a>.
+  </footer>
+</main>
+</body>
+</html>
